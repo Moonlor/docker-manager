@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DockerMgr/Controllers/AuthenticationController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="411">
+              <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <marker date="1558444725733" expanded="true" signature="6:120" ph="..." />
                 <marker date="1558444725733" expanded="true" signature="153:975" ph="{...}" />
@@ -45,6 +45,19 @@
                 <marker date="1558444725733" expanded="true" signature="614:967" ph="{...}" />
                 <marker date="1558444725733" expanded="true" signature="673:748" ph="{...}" />
                 <marker date="1558444725733" expanded="true" signature="844:906" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DockerMgr/Services/IAuthenticateService.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding>
+                <marker date="1558442877826" expanded="true" signature="50:184" ph="{...}" />
+                <marker date="1558442877826" expanded="true" signature="94:182" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -78,6 +91,9 @@
       <find>IsAuthenticated</find>
       <find>out</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/DockerMgr/Controllers/ValuesController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -117,6 +133,7 @@
     <option name="width" value="1428" />
     <option name="height" value="865" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -127,8 +144,19 @@
         <subPane>
           <expand>
             <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="DockerMgr" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="DockerMgr" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="DockerMgr" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="DockerMgr" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="DockerMgr" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Services" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -199,12 +227,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558437343018</updated>
-      <workItem from="1558437344316" duration="5991000" />
+      <workItem from="1558437344316" duration="6242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5991000" />
+    <option name="totallyTimeSpent" value="6242000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -219,7 +247,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="NuGet" weight="0.49171975" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -227,13 +255,13 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Unit Tests" />
       <window_info anchor="bottom" id="REST Client" weight="0.50120485" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.6433735" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Performance Profiler" />
       <window_info anchor="bottom" id="Build" weight="0.41566265" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2759036" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2759036" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,17 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DockerMgr/Services/IAuthenticateService.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding>
-            <marker date="1558442877826" expanded="true" signature="50:184" ph="{...}" />
-            <marker date="1558442877826" expanded="true" signature="94:182" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DockerMgr/Services/IUserManagementService.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -411,8 +428,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DockerMgr/Controllers/AuthenticationController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="411">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding>
             <marker date="1558444725733" expanded="true" signature="6:120" ph="..." />
             <marker date="1558444725733" expanded="true" signature="153:975" ph="{...}" />
@@ -421,6 +438,17 @@
             <marker date="1558444725733" expanded="true" signature="614:967" ph="{...}" />
             <marker date="1558444725733" expanded="true" signature="673:748" ph="{...}" />
             <marker date="1558444725733" expanded="true" signature="844:906" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Services/IAuthenticateService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <marker date="1558442877826" expanded="true" signature="50:184" ph="{...}" />
+            <marker date="1558442877826" expanded="true" signature="94:182" ph="{...}" />
           </folding>
         </state>
       </provider>
