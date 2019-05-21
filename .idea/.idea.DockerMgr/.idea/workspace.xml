@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b1ba5338-54ca-4268-9c09-41dccd3793ae" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DockerMgr/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+              <folding>
+                <marker date="1558442104805" expanded="true" signature="6:593" ph="..." />
+                <marker date="1558442104805" expanded="true" signature="614:2981" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="641:2979" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="700:763" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="986:2227" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="1406:1590" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="1622:2049" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="1800:2034" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="2432:2973" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="2479:2556" ph="{...}" />
+                <marker date="1558442104805" expanded="true" signature="2573:2776" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DockerMgr/Controllers/AuthenticationController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <marker date="1558444725733" expanded="true" signature="6:120" ph="..." />
+                <marker date="1558444725733" expanded="true" signature="153:975" ph="{...}" />
+                <marker date="1558444725733" expanded="true" signature="264:973" ph="{...}" />
+                <marker date="1558444725733" expanded="true" signature="411:471" ph="{...}" />
+                <marker date="1558444725733" expanded="true" signature="614:967" ph="{...}" />
+                <marker date="1558444725733" expanded="true" signature="673:748" ph="{...}" />
+                <marker date="1558444725733" expanded="true" signature="844:906" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DockerMgr/Controllers/ValuesController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <marker date="1558443509316" expanded="true" signature="6:170" ph="..." />
+                <marker date="1558443509316" expanded="true" signature="203:1027" ph="{...}" />
+                <marker date="1558443509316" expanded="true" signature="324:1025" ph="{...}" />
+                <marker date="1558443509316" expanded="true" signature="429:503" ph="{...}" />
+                <marker date="1558443509316" expanded="true" signature="606:654" ph="{...}" />
+                <marker date="1558443509316" expanded="true" signature="751:771" ph="{...}" />
+                <marker date="1558443509316" expanded="true" signature="883:903" ph="{...}" />
+                <marker date="1558443509316" expanded="true" signature="999:1019" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>IAuthenticateService</find>
+      <find>services</find>
+      <find>IsAuthenticated</find>
+      <find>out</find>
+    </findStrings>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Controllers/ValuesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/088051FB-72DE-4607-81C4-D1937DDE71E2/74/54f0b658/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/427697FE-42B7-459B-A530-2FB76D339D3B/a3/ac960cc2/AuthenticationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Services/impl/UserManagementService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Services/IUserManagementService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Services/impl/TokenAuthenticationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Services/IAuthenticateService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Controllers/AuthenticationController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/Models/TokenManagement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DockerMgr/DTO/TokenRequestDTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D70A7D9E-B5F0-4C89-B0EA-698947CAE270/5/JwtSecurityToken.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DockerMgr/Models/TokenManagement.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/Services/ConfigureService.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/Services/IAuthenticateService.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/Services/IUserManagementService.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/Services/impl/UserManagementService.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/Services/impl/TokenAuthenticationService.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/DTO/TokenRequest.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/DTO/TokenRequestDTO.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/appsettings.Development.json" />
+        <option value="$PROJECT_DIR$/DockerMgr/Startup.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/Controllers/ValuesController.cs" />
+        <option value="$PROJECT_DIR$/DockerMgr/Controllers/AuthenticationController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="6" />
+    <option name="y" value="29" />
+    <option name="width" value="1428" />
+    <option name="height" value="865" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="DockerMgr" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.DockerMgr">
+    <configuration name="DockerMgr" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/DockerMgr/DockerMgr.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="LAUNCH_PROFILE_NAME" value="DockerMgr" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DockerMgr: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/DockerMgr/DockerMgr.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1ba5338-54ca-4268-9c09-41dccd3793ae" name="Default Changelist" comment="" />
+      <created>1558437343018</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558437343018</updated>
+      <workItem from="1558437344316" duration="5991000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5991000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="NuGet" weight="0.49171975" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="REST Client" weight="0.50120485" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32891566" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Build" weight="0.41566265" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2759036" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Services/ConfigureService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/088051FB-72DE-4607-81C4-D1937DDE71E2/74/54f0b658/Encoding.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="327" column="8" selection-start-line="327" selection-start-column="8" selection-end-line="327" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Models/TokenManagement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <marker date="1558438349111" expanded="true" signature="50:600" ph="{...}" />
+            <marker date="1558438349111" expanded="true" signature="121:598" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/427697FE-42B7-459B-A530-2FB76D339D3B/a3/ac960cc2/AuthenticationServiceCollectionExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D70A7D9E-B5F0-4C89-B0EA-698947CAE270/5/JwtSecurityToken.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+          <folding>
+            <marker date="1558442104805" expanded="true" signature="6:593" ph="..." />
+            <marker date="1558442104805" expanded="true" signature="614:2981" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="641:2979" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="700:763" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="986:2227" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="1406:1590" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="1622:2049" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="1800:2034" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="2432:2973" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="2479:2556" ph="{...}" />
+            <marker date="1558442104805" expanded="true" signature="2573:2776" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/appsettings.Development.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Services/IAuthenticateService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <marker date="1558442877826" expanded="true" signature="50:184" ph="{...}" />
+            <marker date="1558442877826" expanded="true" signature="94:182" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Services/IUserManagementService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding>
+            <marker date="1558441465795" expanded="true" signature="28:148" ph="{...}" />
+            <marker date="1558441465795" expanded="true" signature="74:146" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Services/impl/TokenAuthenticationService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding>
+            <marker date="1558442877833" expanded="true" signature="6:220" ph="..." />
+            <marker date="1558442877833" expanded="true" signature="255:1714" ph="{...}" />
+            <marker date="1558442877833" expanded="true" signature="324:1712" ph="{...}" />
+            <marker date="1558442877833" expanded="true" signature="587:707" ph="{...}" />
+            <marker date="1558442877833" expanded="true" signature="789:1706" ph="{...}" />
+            <marker date="1558442877833" expanded="true" signature="1011:1090" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Services/impl/UserManagementService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <marker date="1558441914290" expanded="true" signature="33:225" ph="{...}" />
+            <marker date="1558441914290" expanded="true" signature="99:223" ph="{...}" />
+            <marker date="1558441914290" expanded="true" signature="172:217" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/DTO/TokenRequestDTO.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <marker date="1558442877835" expanded="true" signature="6:67" ph="..." />
+            <marker date="1558442877835" expanded="true" signature="92:358" ph="{...}" />
+            <marker date="1558442877835" expanded="true" signature="127:356" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Controllers/ValuesController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <marker date="1558443509316" expanded="true" signature="6:170" ph="..." />
+            <marker date="1558443509316" expanded="true" signature="203:1027" ph="{...}" />
+            <marker date="1558443509316" expanded="true" signature="324:1025" ph="{...}" />
+            <marker date="1558443509316" expanded="true" signature="429:503" ph="{...}" />
+            <marker date="1558443509316" expanded="true" signature="606:654" ph="{...}" />
+            <marker date="1558443509316" expanded="true" signature="751:771" ph="{...}" />
+            <marker date="1558443509316" expanded="true" signature="883:903" ph="{...}" />
+            <marker date="1558443509316" expanded="true" signature="999:1019" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerMgr/Controllers/AuthenticationController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <marker date="1558444725733" expanded="true" signature="6:120" ph="..." />
+            <marker date="1558444725733" expanded="true" signature="153:975" ph="{...}" />
+            <marker date="1558444725733" expanded="true" signature="264:973" ph="{...}" />
+            <marker date="1558444725733" expanded="true" signature="411:471" ph="{...}" />
+            <marker date="1558444725733" expanded="true" signature="614:967" ph="{...}" />
+            <marker date="1558444725733" expanded="true" signature="673:748" ph="{...}" />
+            <marker date="1558444725733" expanded="true" signature="844:906" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
