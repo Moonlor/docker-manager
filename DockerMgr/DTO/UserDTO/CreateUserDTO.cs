@@ -3,12 +3,16 @@ using Newtonsoft.Json;
 
 namespace DockerMgr.DTO
 {
-    public class TokenRequestDTO
+    public class CreateUserDTO
     {
         [Required] 
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        
+        
+        [Required]
         [JsonProperty("email")]
         public string Email { get; set; }
-        
         
         [Required]
         [JsonProperty("password")]

@@ -23,11 +23,11 @@ namespace DockerMgr.Services.impl
         {
             
             token = string.Empty;
-            if (!_userManagementService.IsValidUser(requestDto.Username, requestDto.Password)) return false;
+            if (!_userManagementService.IsValidUser(requestDto.Email, requestDto.Password)) return false;
             
             var claim = new[]
             {
-                new Claim(ClaimTypes.Name, requestDto.Username)
+                new Claim(ClaimTypes.Email, requestDto.Email)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenManagement.Secret));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -42,6 +42,27 @@ namespace DockerMgr.Services.impl
             token = new JwtSecurityTokenHandler().WriteToken(jwtToken);
             return true;
 
+        }
+
+        public string GenerateToken(string email)
+        {
+            string token;
+            var claim = new[]
+            {
+                new Claim(ClaimTypes.Email, email)
+            };
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenManagement.Secret));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                
+            var jwtToken = new JwtSecurityToken(
+                _tokenManagement.Issuer,
+                _tokenManagement.Audience,
+                claim,
+                expires:DateTime.Now.AddMinutes(_tokenManagement.AccessExpiration),
+                signingCredentials: credentials
+            );
+            token = new JwtSecurityTokenHandler().WriteToken(jwtToken);
+            return token;
         }
     }
 }

@@ -12,14 +12,20 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="AuthenticationController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="DockerMgr.csproj" t="IncludeRecursive" />
         <e p="DTO" t="Include">
           <e p="TokenRequestDTO.cs" t="Include" />
+          <e p="UserDTO" t="Include">
+            <e p="CreateUserDTO.cs" t="Include" />
+            <e p="UserLoginDTO.cs" t="Include" />
+          </e>
         </e>
         <e p="Models" t="Include">
           <e p="TokenManagement.cs" t="Include" />
+          <e p="User.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -37,10 +43,16 @@
           <e p="impl" t="Include">
             <e p="TokenAuthenticationService.cs" t="Include" />
             <e p="UserManagementService.cs" t="Include" />
+            <e p="UserService.cs" t="Include" />
           </e>
           <e p="IUserManagementService.cs" t="Include" />
+          <e p="IUserService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="Utils" t="Include">
+          <e p="Msg.cs" t="Include" />
+          <e p="MsgCode.cs" t="Include" />
+        </e>
       </e>
       <e p="DockerMgr.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

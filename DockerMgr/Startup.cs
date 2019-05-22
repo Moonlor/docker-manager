@@ -56,6 +56,7 @@ namespace DockerMgr
 
             services.AddScoped<IAuthenticateService, TokenAuthenticationService>();
             services.AddScoped<IUserManagementService, UserManagementService>();
+            services.AddScoped<UserService>();
         }
         
         
