@@ -70,6 +70,16 @@ namespace DockerMgr.Controllers
                 }
             };
         }
+
+        [HttpPost, Route("logout")]
+        [Authorize]
+        public ActionResult<Msg> Logout([FromBody] CreateUserDTO createUserDto)
+        {
+            return new Msg
+            {
+                Message = MsgCode.SUCCESS
+            };
+        }
         
         
     }
