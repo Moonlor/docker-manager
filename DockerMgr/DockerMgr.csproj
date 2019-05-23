@@ -12,4 +12,8 @@
         <PackageReference Include="MongoDB.Driver" Version="2.9.0-beta1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\PWEncrypt\PWEncrypt.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,7 +1,9 @@
+using DockerMgr.Models;
+
 namespace DockerMgr.Services
 {
     public interface IUserManagementService
     {
-        bool IsValidUser(string username, string password);
+        bool IsValidUser(string email , string password, out User checkedUser);
     }
 }

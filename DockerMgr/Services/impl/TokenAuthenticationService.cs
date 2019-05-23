@@ -19,11 +19,14 @@ namespace DockerMgr.Services.impl
             _userManagementService = service;
             _tokenManagement = tokenManagement.Value;
         }
-        public bool IsAuthenticated(TokenRequestDTO requestDto, out string token)
+        public bool IsAuthenticated(TokenRequestDTO requestDto, out string token, out User theUser)
         {
             
             token = string.Empty;
-            if (!_userManagementService.IsValidUser(requestDto.Email, requestDto.Password)) return false;
+            theUser = null;
+
+            User checkedUser = null;
+            if (!_userManagementService.IsValidUser(requestDto.Email, requestDto.Password, out checkedUser)) return false;
             
             var claim = new[]
             {

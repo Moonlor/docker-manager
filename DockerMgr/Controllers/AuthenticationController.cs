@@ -30,15 +30,16 @@ namespace DockerMgr.Controllers
             }
 
             string token;
+            User user;
             
-            if (_authService.IsAuthenticated(requestDto, out token))
+            if (_authService.IsAuthenticated(requestDto, out token, out user))
             {
                 return new Msg{
                     Message = MsgCode.SUCCESS,
                     Data = new UserLoginDTO{
                         Email = requestDto.Email.ToLower(),
                         Token = token,
-                        Id = "213123213"
+                        Id = user.Id
                     }
                 };
             }
@@ -75,9 +76,11 @@ namespace DockerMgr.Controllers
         [Authorize]
         public ActionResult<Msg> Logout([FromBody] CreateUserDTO createUserDto)
         {
+            
             return new Msg
             {
-                Message = MsgCode.SUCCESS
+                Message = MsgCode.SUCCESS,
+                Data = null
             };
         }
         

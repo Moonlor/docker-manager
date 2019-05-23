@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerMgr", "DockerMgr\DockerMgr.csproj", "{0CD66A30-19A1-46BE-9786-18A67260FE2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PWEncrypt", "PWEncrypt\PWEncrypt.csproj", "{BF63D70E-9971-4DCE-99FF-B8A96A72A0D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerMgrTest", "DockerMgrTest\DockerMgrTest.csproj", "{76B4525C-7E6C-49F9-A566-ADBB0901B300}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{0CD66A30-19A1-46BE-9786-18A67260FE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CD66A30-19A1-46BE-9786-18A67260FE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CD66A30-19A1-46BE-9786-18A67260FE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF63D70E-9971-4DCE-99FF-B8A96A72A0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF63D70E-9971-4DCE-99FF-B8A96A72A0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF63D70E-9971-4DCE-99FF-B8A96A72A0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF63D70E-9971-4DCE-99FF-B8A96A72A0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B4525C-7E6C-49F9-A566-ADBB0901B300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B4525C-7E6C-49F9-A566-ADBB0901B300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B4525C-7E6C-49F9-A566-ADBB0901B300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B4525C-7E6C-49F9-A566-ADBB0901B300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
