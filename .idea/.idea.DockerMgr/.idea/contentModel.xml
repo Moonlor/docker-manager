@@ -20,6 +20,11 @@
         </e>
         <e p="DockerMgr.csproj" t="IncludeRecursive" />
         <e p="DTO" t="Include">
+          <e p="ServerDTO" t="Include">
+            <e p="CreateServerDTO.cs" t="Include" />
+            <e p="DeleteServerDTO.cs" t="Include" />
+            <e p="GetAllServer.cs" t="Include" />
+          </e>
           <e p="TokenRequestDTO.cs" t="Include" />
           <e p="UserDTO" t="Include">
             <e p="CreateUserDTO.cs" t="Include" />
@@ -27,6 +32,7 @@
           </e>
         </e>
         <e p="Models" t="Include">
+          <e p="Server.cs" t="Include" />
           <e p="TokenManagement.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
@@ -44,10 +50,12 @@
         <e p="Services" t="Include">
           <e p="IAuthenticateService.cs" t="Include" />
           <e p="impl" t="Include">
+            <e p="ServerService.cs" t="Include" />
             <e p="TokenAuthenticationService.cs" t="Include" />
             <e p="UserManagementService.cs" t="Include" />
             <e p="UserService.cs" t="Include" />
           </e>
+          <e p="IServerService.cs" t="Include" />
           <e p="IUserManagementService.cs" t="Include" />
           <e p="IUserService.cs" t="Include" />
         </e>

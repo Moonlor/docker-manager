@@ -11,6 +11,9 @@ namespace DockerMgr.Controllers
     {
         private readonly UserService _userService;
         
-        
+        public UserController(UserService userService)
+        {
+            _userService = userService;
+        }
     }
 }
