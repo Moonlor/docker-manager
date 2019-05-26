@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DockerMgr.Middleware;
 using DockerMgr.Models;
 using DockerMgr.Services;
 using DockerMgr.Services.impl;
@@ -57,6 +58,7 @@ namespace DockerMgr
             services.AddScoped<IAuthenticateService, TokenAuthenticationService>();
             services.AddScoped<IUserManagementService, UserManagementService>();
             services.AddScoped<UserService>();
+            
         }
         
         
@@ -77,6 +79,15 @@ namespace DockerMgr
             app.UseAuthentication();
 //            app.UseHttpsRedirection();
             app.UseMvc();
+
+            var webSocketOptions = new WebSocketOptions()
+            {
+                KeepAliveInterval = TimeSpan.FromSeconds(120),
+                ReceiveBufferSize = 4 * 1024
+            };
+
+            app.UseWebSockets(webSocketOptions);
+            app.UseDockerWebSocket();
         }
     }
 }
