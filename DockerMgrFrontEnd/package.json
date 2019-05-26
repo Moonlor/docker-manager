@@ -4,8 +4,7 @@
     "start": "umi dev",
     "build": "umi build",
     "test": "umi test",
-    "lint": "eslint --ext .js src mock tests",
-    "precommit": "lint-staged"
+    "lint": "eslint --ext .js src mock tests"
   },
   "dependencies": {
     "ant-design-pro": "^2.3.2",
