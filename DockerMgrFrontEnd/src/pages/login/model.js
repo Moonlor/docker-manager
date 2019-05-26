@@ -1,5 +1,5 @@
 import { routerRedux } from 'dva/router';
-import { setAuthority } from '@/utils/authority';
+import { setAuthority, setUserInfo } from '@/utils/authority';
 import { accountLogin } from './service';
 
 export default {
@@ -20,6 +20,7 @@ export default {
       // Login successfully
       if (response.msg === 'success') {
         setAuthority(token);
+        setUserInfo(response.data);
         yield put(routerRedux.replace('/'));
       }
     }
