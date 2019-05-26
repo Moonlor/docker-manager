@@ -4,6 +4,6 @@ import { DOMAIN } from '@/utils/constants';
 export async function accountLogin(params) {
   return request(`${DOMAIN}/api/Authenticate/login`, {
     method: 'POST',
-    data: params,
+    body: JSON.stringify(params)
   });
 }
