@@ -1,5 +1,7 @@
 import { Layout, Menu, Icon } from 'antd';
 import { Component } from 'react';
+import { routerRedux } from 'dva/router';
+import { setAuthority, setUserInfo } from '@/utils/authority';
 
 import styles from './index.css';
 
@@ -20,6 +22,12 @@ class MainLayout extends Component {
     this.setState({ collapsed });
   };
 
+  logoutHandler = (e) => {
+    setAuthority(null);
+    setUserInfo(null);
+    this.props.history.push("/login");
+  };
+
   render() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
@@ -34,10 +42,17 @@ class MainLayout extends Component {
               <Icon type="desktop" />
               <span>Option 2</span>
             </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="user" />
-              <span>User</span>
-            </Menu.Item>
+            <SubMenu
+              key="sub1"
+              title={
+                <span>
+                  <Icon type="user" />
+                  <span>用户</span>
+                </span>
+              }
+            >
+              <Menu.Item key="logout" onClick={this.logoutHandler}>登出</Menu.Item>
+            </SubMenu>
             <SubMenu
               key="sub2"
               title={

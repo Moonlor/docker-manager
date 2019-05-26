@@ -12,46 +12,44 @@ class Root extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logedIn: false,
-      token: null,
-      userInfo: null
+      logedIn: true
     };
-  }
-
-  componentWillMount() {
-    let token =  getAuthority();
-    if (token != null) {
-      let userInfo = getUserInfo();
-      this.setState({
-        userInfo: userInfo,
-        token: token,
-        logedIn: true
-      });
-    }
   }
 
   render() {
 
+    let token = getAuthority();
+
     if (this.props.location.pathname === '/login') {
-      return (<div>
+      if (token !== 'null') {
+        this.props.history.push("/");
+      }
+
+      return (
+      <div>
         <Background />
         <LoginPgae />
       </div>);
     }
 
     if (this.props.location.pathname === '/register') {
+      if (token !== 'null') {
+        this.props.history.push("/");
+      }
+
       return (<div>
         <Background />
         <Register />
       </div>);
     }
 
+    if (token === 'null') {
+      this.props.history.push("/login");
+    }
+
     return (
       <div>
-        {this.state.logedIn ?
-          (<MainLayout {...this.props}/>)
-          :
-          (<div><Background /><LoginPgae /></div>)}
+        <MainLayout {...this.props} />
       </div>
     );
   }

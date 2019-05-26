@@ -2,12 +2,17 @@ import { Card } from 'antd';
 import { Component } from 'react';
 import Link from 'umi/link';
 import { Form, Input, Button} from 'antd';
+import { connect } from 'dva';
 
 import styles from './index.css';
 
 
 const FormItem = Form.Item;
 
+@connect(({ registerPage, loading }) => ({
+  registerPage,
+  submitting: loading.effects['userRegister/register'],
+}))
 class RegisterPage extends Component {
 
   constructor(props) {
@@ -15,22 +20,25 @@ class RegisterPage extends Component {
     this.state = {};
   }
 
-  handleSubmit = (err, values) => {
-    // if (!err) {
-    //   const { dispatch } = this.props;
-    //   dispatch({
-    //     type: 'userLogin/login',
-    //     payload: {
-    //       ...values,
-    //       type,
-    //     },
-    //   });
-    // }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        const { dispatch } = this.props;
+        dispatch({
+          type: 'userRegister/register',
+          payload: {
+            ...values
+          },
+        });
+      }
+    });
   };
 
   render() {
 
     const { getFieldDecorator } = this.props.form
+    const { submitting } = this.props;
 
     return (
       <Card
@@ -58,7 +66,7 @@ class RegisterPage extends Component {
               )}
             </FormItem>
             <FormItem>
-              {getFieldDecorator('userName', {
+              {getFieldDecorator('name', {
                 rules: [
                   {
                     required: true,
@@ -88,8 +96,7 @@ class RegisterPage extends Component {
             <FormItem>
               <Button
                 size="large"
-                // loading={submitting}
-                className={styles.submit}
+                loading={submitting}
                 type="primary"
                 htmlType="submit"
               >
