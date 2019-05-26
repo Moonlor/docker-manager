@@ -17,5 +17,9 @@ namespace DockerMgr.DTO
         [Required]
         [JsonProperty("id")]
         public string Id { get; set; }
+        
+        [Required]
+        [JsonProperty("name")]
+        public string Name { get; set; }
     }
 }

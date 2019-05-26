@@ -39,7 +39,8 @@ namespace DockerMgr.Controllers
                     Data = new UserLoginDTO{
                         Email = requestDto.Email.ToLower(),
                         Token = token,
-                        Id = user.Id
+                        Id = user.Id,
+                        Name = user.Name
                     }
                 };
             }

@@ -27,7 +27,8 @@ namespace DockerMgr.Services.impl
 
             User checkedUser = null;
             if (!_userManagementService.IsValidUser(requestDto.Email, requestDto.Password, out checkedUser)) return false;
-            
+
+            theUser = checkedUser;
             var claim = new[]
             {
                 new Claim(ClaimTypes.Email, requestDto.Email)
