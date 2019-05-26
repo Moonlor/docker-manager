@@ -16,7 +16,6 @@ class RegisterPage extends Component {
   }
 
   handleSubmit = (err, values) => {
-    const { type } = this.state;
     // if (!err) {
     //   const { dispatch } = this.props;
     //   dispatch({

@@ -1,12 +1,9 @@
-import { Layout, Menu, Breadcrumb, Card } from 'antd';
-import { Login } from 'ant-design-pro';
 import { Component } from 'react';
-import Link from 'umi/link';
 
 import Background from './Background'
-import LoginPgae from '@/components/login/index'
+import LoginPgae from '@/pages/login/index'
 import MainLayout from './MainLayout'
-import Register from '@/components/register/index'
+import Register from '@/pages/register/index'
 import styles from './index.css';
 
 class Root extends Component {
@@ -14,23 +11,9 @@ class Root extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logedIn: false,
+      logedIn: true,
     };
   }
-
-  handleSubmit = (err, values) => {
-    const { type } = this.state;
-    // if (!err) {
-    //   const { dispatch } = this.props;
-    //   dispatch({
-    //     type: 'userLogin/login',
-    //     payload: {
-    //       ...values,
-    //       type,
-    //     },
-    //   });
-    // }
-  };
 
   render() {
 
@@ -50,11 +33,10 @@ class Root extends Component {
 
     return (
       <div>
-        <Background />
         {this.state.logedIn ?
-          (<p>Logedin</p>)
+          (<MainLayout {...this.props}/>)
           :
-          (<LoginPgae />)}
+          (<div><Background /><LoginPgae /></div>)}
       </div>
     );
   }

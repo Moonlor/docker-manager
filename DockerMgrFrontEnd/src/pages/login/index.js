@@ -1,12 +1,17 @@
 import { Card } from 'antd';
 import { Login } from 'ant-design-pro';
 import { Component } from 'react';
+import { connect } from 'dva';
 import Link from 'umi/link';
 
 import styles from './index.css';
 
 const { UserName, Password, Submit } = Login;
 
+@connect(({ loginPage, loading }) => ({
+  loginPage,
+  submitting: loading.effects['userLogin/login'],
+}))
 class LoginPage extends Component {
 
   constructor(props) {
@@ -15,20 +20,20 @@ class LoginPage extends Component {
   }
 
   handleSubmit = (err, values) => {
-    const { type } = this.state;
-    // if (!err) {
-    //   const { dispatch } = this.props;
-    //   dispatch({
-    //     type: 'userLogin/login',
-    //     payload: {
-    //       ...values,
-    //       type,
-    //     },
-    //   });
-    // }
+    if (!err) {
+      const { dispatch } = this.props;
+      dispatch({
+        type: 'userLogin/login',
+        payload: {
+          ...values
+        },
+      });
+    }
   };
 
   render() {
+
+    const { submitting } = this.props;
 
     return (
       <Card
@@ -69,7 +74,7 @@ class LoginPage extends Component {
               ]}
               onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
             />
-            <Submit>
+            <Submit loading={submitting}>
               登录
             </Submit>
             <Card.Meta title="还未注册？" description={
