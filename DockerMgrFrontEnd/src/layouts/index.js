@@ -5,9 +5,9 @@ import Link from 'umi/link';
 
 import Background from './Background'
 import LoginPgae from '@/components/login/index'
+import MainLayout from './MainLayout'
+import Register from '@/components/register/index'
 import styles from './index.css';
-
-const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login;
 
 class Root extends Component {
 
@@ -44,6 +44,7 @@ class Root extends Component {
     if (this.props.location.pathname === '/register') {
       return (<div>
         <Background />
+        <Register />
       </div>);
     }
 

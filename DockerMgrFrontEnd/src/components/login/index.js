@@ -45,7 +45,7 @@ class LoginPage extends Component {
             }}
           >
             <UserName
-              name="userName"
+              name="email"
               placeholder={"邮箱地址"}
               rules={[
                 {
@@ -71,11 +71,11 @@ class LoginPage extends Component {
             />
             <Submit>
               登录
-                  </Submit>
+            </Submit>
             <Card.Meta title="还未注册？" description={
               <Link to="/register">
                 注册
-                    </Link>
+              </Link>
             } />
           </Login>
         </div>
