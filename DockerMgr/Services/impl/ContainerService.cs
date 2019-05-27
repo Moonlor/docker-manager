@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Docker.DotNet;
 using Docker.DotNet.Models;
-using DockerMgr.DTO;
 
 namespace DockerMgr.Services.impl
 {

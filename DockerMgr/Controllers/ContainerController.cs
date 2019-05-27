@@ -1,6 +1,5 @@
 using DockerMgr.DTO;
 using DockerMgr.Services;
-using DockerMgr.Services.impl;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +17,7 @@ namespace DockerMgr.Controllers
         }
         
         [AllowAnonymous]
-        [HttpPost, Route("get")]
+        [HttpPost, Route("all")]
         public ActionResult<Msg> GetAll([FromBody] TokenRequestDTO requestDto)
         {
             var ip = requestDto.Email;

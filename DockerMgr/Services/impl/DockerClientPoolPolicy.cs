@@ -6,7 +6,6 @@ namespace DockerMgr.Services.impl
 {
     public class DockerClientPoolPolicy : IPooledObjectPolicy<DockerClient>
     {
-
         private readonly string _ip;
         
         public DockerClientPoolPolicy(string ip)
