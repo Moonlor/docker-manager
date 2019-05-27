@@ -27,7 +27,7 @@ namespace DockerMgr.Middleware
         public async Task Invoke(HttpContext context) 
         {
             // 判断是否为websocket请求
-            if (context.WebSockets.IsWebSocketRequest) 
+            if (context.WebSockets.IsWebSocketRequest)
             {
                 if (context.Request.Path == "/ws")
                 {
@@ -47,7 +47,7 @@ namespace DockerMgr.Middleware
         
         private async Task Echo(HttpContext context, WebSocket _webSocket) 
         {
-            const string id = "0e879b366cf7";
+            const string id = "fef4af614e3";
             var client = new DockerClientConfiguration(new Uri("http://47.100.187.100:2375")).CreateClient();
             
             var execCreateResp = await client.Containers.ExecCreateContainerAsync(
@@ -94,7 +94,7 @@ namespace DockerMgr.Middleware
                             }
                             catch (Exception ex)
                             {
-                                // _logger.LogError(ex, "Failure during Read from Docker Exec to WebSocket");
+                                Console.WriteLine($"{ex} Failure during Read from Docker Exec to WebSocket");
                             }
                             System.Buffers.ArrayPool<byte>.Shared.Return(dockerBuffer);
                             

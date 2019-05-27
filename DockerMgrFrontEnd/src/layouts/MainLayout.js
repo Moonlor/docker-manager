@@ -2,6 +2,7 @@ import { Layout, Menu, Icon } from 'antd';
 import { Component } from 'react';
 import { routerRedux } from 'dva/router';
 import { setAuthority, setUserInfo } from '@/utils/authority';
+import Link from 'umi/link';
 
 import styles from './index.css';
 
@@ -18,7 +19,6 @@ class MainLayout extends Component {
   }
 
   onCollapse = collapsed => {
-    console.log(collapsed);
     this.setState({ collapsed });
   };
 
@@ -28,19 +28,34 @@ class MainLayout extends Component {
     this.props.history.push("/login");
   };
 
+  handleClick = e => {
+    this.props.history.push(e.key);
+  };
+
   render() {
+
+    const pathName = this.props.location.pathname;
+
     return (
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className={styles.logo} />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+          <Menu 
+            theme="dark" 
+            defaultSelectedKeys={['1']} 
+            mode="inline" 
+            selectedKeys={[pathName]}
+            onClick={this.handleClick}
+            >
             <Menu.Item key="1">
               <Icon type="pie-chart" />
               <span>Option 1</span>
             </Menu.Item>
-            <Menu.Item key="2">
+            <Menu.Item key="/terminal">
               <Icon type="desktop" />
-              <span>Option 2</span>
+              <span>
+                <Link className={styles.menuLink} to="/terminal">终端</Link>
+              </span>
             </Menu.Item>
             <SubMenu
               key="sub1"
@@ -72,7 +87,7 @@ class MainLayout extends Component {
           </Menu>
         </Sider>
         <Layout>
-          <Content style={{ margin: '0 16px' }}>
+          <Content style={{ margin: '16px 16px' }}>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               {this.props.children}
             </div>
