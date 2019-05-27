@@ -47,10 +47,6 @@ class Root extends Component {
       this.props.history.push("/login");
     }
 
-    if (this.props.location.pathname === '/') {
-      this.props.history.push("/monitor");
-    }
-
     return (
       <div>
         <MainLayout {...this.props} />

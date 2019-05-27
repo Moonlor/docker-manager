@@ -6,7 +6,6 @@ import { connect } from 'dva';
 
 import styles from './index.css';
 
-
 const FormItem = Form.Item;
 
 @connect(({ registerPage, loading }) => ({

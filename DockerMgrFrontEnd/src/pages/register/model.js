@@ -11,9 +11,6 @@ export default {
 
   effects: {
     *register({ payload }, { call, put }) {
-      console.log('sdasdasfasas');
-
-
       const response = yield call(userRegister, payload);
       let token = response.data.token;
       // Login successfully
