@@ -42,14 +42,14 @@ class MainLayout extends Component {
           <div className={styles.logo} />
           <Menu 
             theme="dark" 
-            defaultSelectedKeys={['1']} 
+            defaultSelectedKeys={['/monitor']} 
             mode="inline" 
             selectedKeys={[pathName]}
             onClick={this.handleClick}
             >
-            <Menu.Item key="1">
+            <Menu.Item key="/monitor">
               <Icon type="pie-chart" />
-              <span>Option 1</span>
+              <span>监控</span>
             </Menu.Item>
             <Menu.Item key="/terminal">
               <Icon type="desktop" />

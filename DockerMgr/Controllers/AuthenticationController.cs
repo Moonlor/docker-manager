@@ -11,9 +11,9 @@ namespace DockerMgr.Controllers
     public class AuthenticateController : ControllerBase
     {
         private readonly IAuthenticateService _authService;
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
         
-        public AuthenticateController(IAuthenticateService authService, UserService userService)
+        public AuthenticateController(IAuthenticateService authService, IUserService userService)
         {
             _authService = authService;
             _userService = userService;
