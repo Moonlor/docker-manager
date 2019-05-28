@@ -1,7 +1,5 @@
 import { Component } from 'react';
-import { List, Card } from 'antd';
-import { connect } from 'dva';
-
+import { List, Card, Tag, Timeline } from 'antd';
 
 class ContainerList extends Component {
 
@@ -11,19 +9,52 @@ class ContainerList extends Component {
   }
 
   render() {
-    const { containers } = this.props;
+    const { containers, server } = this.props;
 
     return (
-
-      <List
-        grid={{ gutter: 16, column: 2 }}
-        dataSource={containers}
-        renderItem={item => (
-          <List.Item>
-            <Card title={item.Image}>Card content</Card>
-          </List.Item>
-        )}
-      />
+      <div>
+        <Card
+          style={{ margin: '0 0 16px 0' }}
+          title={'服务器IP地址: ' + server.ip}
+          extra={'端口: ' + server.endpoint}
+        >
+          <Card.Meta
+            title={server.introduction}
+            description={
+              <div>
+                <Tag color="blue">{server.id}</Tag>
+                <Tag color="blue">{server.provider}</Tag>
+              </div>
+            }
+          />
+        </Card>
+        <List
+          grid={{ gutter: 16, column: 2 }}
+          dataSource={containers}
+          renderItem={item => (
+            <List.Item>
+              <Card
+                title={item.Image}
+                extra={'状态: ' + item.State}
+              >
+                <div>
+                  <Timeline>
+                    <Timeline.Item color="green">创建于 <Tag color="green"><code>{item.Created}</code></Tag></Timeline.Item>
+                    <Timeline.Item color="green">启动命令 <Tag color="green"><code>{item.Command}</code></Tag></Timeline.Item>
+                    <Timeline.Item >当前状态 <Tag color="blue"><code>{item.Status}</code></Tag></Timeline.Item>
+                  </Timeline>
+                  <div>
+                    <span>Gateway: <Tag>{item.NetworkSettings.Networks.bridge.Gateway}</Tag><p></p></span>
+                    <span>IPAddress: <Tag>{item.NetworkSettings.Networks.bridge.IPAddress}</Tag><p></p></span>
+                    <span>MacAddress: <Tag>{item.NetworkSettings.Networks.bridge.MacAddress}</Tag><p></p></span>
+                    <span>Container Id: <Tag>{item.Id.slice(0, 15)}</Tag><p></p></span>
+                  </div>
+                </div>
+              </Card>
+            </List.Item>
+          )}
+        />
+      </div>
     );
   }
 }

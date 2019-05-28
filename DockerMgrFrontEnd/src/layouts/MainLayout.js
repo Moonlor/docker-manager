@@ -49,7 +49,7 @@ class MainLayout extends Component {
             >
             <Menu.Item key="/monitor">
               <Icon type="pie-chart" />
-              <span>监控</span>
+              <span>概览</span>
             </Menu.Item>
             <Menu.Item key="/terminal">
               <Icon type="desktop" />

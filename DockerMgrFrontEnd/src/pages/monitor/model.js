@@ -1,5 +1,4 @@
 import { routerRedux } from 'dva/router';
-import { setAuthority, setUserInfo } from '@/utils/authority';
 import { getAllContainers } from './service';
 import { getAuthority, getUserInfo } from '@/utils/authority';
 
@@ -34,7 +33,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/monitor') {
+        if (pathname === '/monitor' || pathname === '/terminal') {
           const { id } = getUserInfo();
           dispatch({ type: 'get', payload: {id}});
         }

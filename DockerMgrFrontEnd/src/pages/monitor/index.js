@@ -26,7 +26,6 @@ class MonitorPage extends Component {
         data.push({ server: server, container: container });
       }
     }
-    console.log(data);
     
     return(
 
@@ -35,11 +34,8 @@ class MonitorPage extends Component {
         dataSource={data}
         loading={loading}
         renderItem={item => (
-          <List.Item
-            extra={
-              <Card title={'item.server.id'}>{item.server.id}</Card>
-            }>
-            <ContainerList containers={item.container} />
+          <List.Item>
+            <ContainerList containers={item.container} server={item.server}/>
           </List.Item>
         )}
       />
