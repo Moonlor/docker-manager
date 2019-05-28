@@ -15,14 +15,35 @@ class Root extends Component {
     };
   }
 
-  render() {
-
+  componentWillMount()
+  {
     let token = getAuthority();
 
     if (this.props.location.pathname === '/login') {
       if (token !== 'null') {
         this.props.history.push("/");
       }
+    }
+
+    if (this.props.location.pathname === '/register') {
+      if (token !== 'null') {
+        this.props.history.push("/");
+      }
+    }
+
+    if (token === 'null') {
+      this.props.history.push("/login");
+    }
+  }
+
+  render() {
+
+    let token = getAuthority();
+
+    if (this.props.location.pathname === '/login') {
+      // if (token !== 'null') {
+      //   this.props.history.push("/");
+      // }
 
       return (
       <div>
@@ -32,9 +53,9 @@ class Root extends Component {
     }
 
     if (this.props.location.pathname === '/register') {
-      if (token !== 'null') {
-        this.props.history.push("/");
-      }
+      // if (token !== 'null') {
+      //   this.props.history.push("/");
+      // }
 
       return (<div>
         <Background />
@@ -43,7 +64,13 @@ class Root extends Component {
     }
 
     if (token === 'null') {
-      this.props.history.push("/login");
+      // this.props.history.push("/login");
+      return (
+        <div>
+          <Background />
+          <LoginPgae />
+        </div>
+      );
     }
 
     return (

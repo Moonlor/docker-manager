@@ -7,3 +7,10 @@ export async function getAllContainers(params) {
     body: JSON.stringify(params)
   });
 }
+
+export async function AddServer(params) {
+  return request(`${DOMAIN}/api/server/create`, {
+    method: 'POST',
+    body: JSON.stringify(params)
+  });
+}

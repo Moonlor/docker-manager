@@ -34,7 +34,7 @@ class TerminalPage extends Component {
     this[action](targetKey);
   };
 
-  add = (id, image) => {
+  add = (id, image, ip) => {
     const panes = this.state.panes;
     const activeKey = `${id} ${this.newTabIndex++}`;
     panes.push({ title: `${this.newTabIndex} - ${image}`, key: activeKey, image: image });
@@ -45,7 +45,7 @@ class TerminalPage extends Component {
       term.writeln("welcome to use docker web terminal!");
       term.writeln(`Current container: ${image}`);
       term.writeln("-----------------------------------");
-      let socket = new WebSocket(`ws://127.0.0.1:5000/ws?token=${id}`);
+      let socket = new WebSocket(`ws://127.0.0.1:5000/ws?token=${id}&ip=${ip}`);
       term.attach(socket);
       socket.onclose = function () {
         term.writeln("closed. Thank you for use!");
@@ -99,7 +99,7 @@ class TerminalPage extends Component {
               <ButtonGroup >
                 <Button type="primary" disabled icon="cloud">{`${c.Image}`}</Button>
                 <Button type="primary" disabled icon="tag">{`${c.Id.slice(0, 5)}`}</Button>
-                <Button type="primary" icon="desktop" onClick={this.add.bind(this, c.Id, c.Image)} >终端</Button>
+                <Button type="primary" icon="desktop" onClick={this.add.bind(this, c.Id, c.Image, e.server.ip)} >终端</Button>
               </ButtonGroup>
             </Card.Grid>)
         }
