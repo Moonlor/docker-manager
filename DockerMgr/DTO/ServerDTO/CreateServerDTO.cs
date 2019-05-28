@@ -21,5 +21,9 @@ namespace DockerMgr.DTO.ServerDTO
         [Required]
         [JsonProperty("endpoint")]
         public string Endpoint { get; set; }
+        
+        [Required]
+        [JsonProperty("userId")]
+        public string UserId { get; set; }
     }
 }

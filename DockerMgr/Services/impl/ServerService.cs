@@ -24,7 +24,8 @@ namespace DockerMgr.Services.impl
                 Ip = serverDto.Ip,
                 Introduction = serverDto.Introduction,
                 Endpoint = serverDto.Endpoint,
-                Provider = serverDto.Provider
+                Provider = serverDto.Provider,
+                UserId = serverDto.UserId
             };
             
             _servers.InsertOne(newServer);
