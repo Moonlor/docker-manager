@@ -99,7 +99,11 @@ class TerminalPage extends Component {
               <ButtonGroup >
                 <Button type="primary" disabled icon="cloud">{`${c.Image}`}</Button>
                 <Button type="primary" disabled icon="tag">{`${c.Id.slice(0, 5)}`}</Button>
-                <Button type="primary" icon="desktop" onClick={this.add.bind(this, c.Id, c.Image, e.server.ip)} >终端</Button>
+                {c.State === 'running' ? 
+                  <Button type="primary" icon="desktop" onClick={this.add.bind(this, c.Id, c.Image, e.server.ip)} >终端</Button>
+                  :
+                  <Button type="danger" icon="desktop" >终端(不可用)</Button>
+                }
               </ButtonGroup>
             </Card.Grid>)
         }

@@ -41,8 +41,14 @@ class ContainerList extends Component {
                   <Timeline>
                     <Timeline.Item color="green">创建于 <Tag color="green"><code>{item.Created}</code></Tag></Timeline.Item>
                     <Timeline.Item color="green">启动命令 <Tag color="green"><code>{item.Command}</code></Tag></Timeline.Item>
-                    <Timeline.Item >当前状态 <Tag color="blue"><code>{item.Status}</code></Tag></Timeline.Item>
+                    {item.State === 'running' ?
+                      <Timeline.Item >当前状态 <Tag color="blue"><code>{item.Status}</code></Tag></Timeline.Item>
+                      :
+                      <Timeline.Item color="red">当前状态 <Tag color="red"><code>{item.Status}</code></Tag></Timeline.Item>
+                    }
                   </Timeline>
+                      
+                      
                   <div>
                     <span>Gateway: <Tag>{item.NetworkSettings.Networks.bridge.Gateway}</Tag><p></p></span>
                     <span>IPAddress: <Tag>{item.NetworkSettings.Networks.bridge.IPAddress}</Tag><p></p></span>

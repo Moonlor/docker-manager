@@ -54,7 +54,7 @@ class MainLayout extends Component {
             <Menu.Item key="/terminal">
               <Icon type="desktop" />
               <span>
-                <Link className={styles.menuLink} to="/terminal">终端</Link>
+                <Link className={styles.menuLink} to="/terminal">容器</Link>
               </span>
             </Menu.Item>
             <SubMenu
