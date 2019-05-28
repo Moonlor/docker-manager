@@ -33,8 +33,9 @@ namespace DockerMgr.Middleware
                 {
                     if (context.WebSockets.IsWebSocketRequest) 
                     {
+                        string token = context.Request.Query["token"];
                         WebSocket webSocket = await context.WebSockets.AcceptWebSocketAsync();
-                        await Echo(context, webSocket);
+                        await Echo(context, webSocket, token);
                     } else 
                     {
                         context.Response.StatusCode = 400;
@@ -45,9 +46,9 @@ namespace DockerMgr.Middleware
             // await this._next(context);
         }
         
-        private async Task Echo(HttpContext context, WebSocket _webSocket) 
+        private async Task Echo(HttpContext context, WebSocket _webSocket, string token) 
         {
-            const string id = "fef4af614e3";
+            string id = token;
             var client = new DockerClientConfiguration(new Uri("http://47.100.187.100:2375")).CreateClient();
             
             var execCreateResp = await client.Containers.ExecCreateContainerAsync(

@@ -4,8 +4,7 @@ import Background from './Background'
 import LoginPgae from '@/pages/login/index'
 import MainLayout from './MainLayout'
 import Register from '@/pages/register/index'
-import { getAuthority, getUserInfo } from '@/utils/authority';
-import styles from './index.css';
+import { getAuthority } from '@/utils/authority';
 
 class Root extends Component {
 
