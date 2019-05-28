@@ -25,7 +25,7 @@ function checkStatus(response) {
 
   if (response.status >= 200 && response.status < 300) {
     notification.success({
-      message: `${url}: ${status}`,
+      message: `${status}`,
       description: text,
     })
     return response;

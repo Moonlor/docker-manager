@@ -13,7 +13,6 @@ export default {
   effects: {
     *get({ payload }, { call, put }) {
       const response = yield call(getAllContainers, payload);
-      console.log(response);
       yield put({
         type: 'save',
         payload: {
