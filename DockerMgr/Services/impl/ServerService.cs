@@ -44,9 +44,9 @@ namespace DockerMgr.Services.impl
             return true;
         }
 
-        public List<Server> GetAll()
+        public List<Server> GetAll(string userId)
         {
-            return _servers.Find(s => true).ToList();
+            return _servers.Find(s => s.UserId == userId).ToList();
         }
     }
 }

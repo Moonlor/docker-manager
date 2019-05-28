@@ -10,6 +10,6 @@ namespace DockerMgr.Services
 
         bool Delete(DeleteServerDTO serverDto);
 
-        List<Server> GetAll();
+        List<Server> GetAll(string userId);
     }
 }

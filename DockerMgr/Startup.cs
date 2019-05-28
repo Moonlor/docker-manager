@@ -60,6 +60,7 @@ namespace DockerMgr
             services.AddScoped<IUserManagementService, UserManagementService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IContainerService, ContainerService>();
+            services.AddScoped<IServerService, ServerService>();
             services.AddSingleton<IDockerClientPoolCollection, DockerClientPoolCollection>();
         }
         

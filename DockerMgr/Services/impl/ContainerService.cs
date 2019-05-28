@@ -1,28 +1,43 @@
 using System;
 using System.Collections.Generic;
 using Docker.DotNet.Models;
+using DockerMgr.DTO.ContainerDTO;
+using DockerMgr.Models;
 
 namespace DockerMgr.Services.impl
 {
     public class ContainerService : IContainerService
     {
         private readonly IDockerClientPoolCollection _pools;
+        private readonly IServerService _serverService;
 
-        public ContainerService(IDockerClientPoolCollection pools)
+        public ContainerService(IDockerClientPoolCollection pools, IServerService serverService)
         {
             _pools = pools;
+            _serverService = serverService;
         }
         
-        public IList<ContainerListResponse> GetAll(string ip)
+        public ReturnContainersByIdDTO GetAllById(string userId)
         {
-            var client = _pools.GetPoolByIp(ip).Get();
-            ContainersListParameters p = new ContainersListParameters()
+            List<Server> servers = _serverService.GetAll(userId);
+            var res = new ReturnContainersByIdDTO()
             {
-                All = true
+                Servers = new List<Server>(),
+                Containers = new List<IList<ContainerListResponse>>()
             };
-            var containers = client.Containers.ListContainersAsync(p).GetAwaiter().GetResult();
+            foreach (var i in servers)
+            {
+                var client = _pools.GetPoolByIp(i.Ip).Get();
+                ContainersListParameters p = new ContainersListParameters()
+                {
+                    All = true
+                };
+                var containers = client.Containers.ListContainersAsync(p).GetAwaiter().GetResult();
+                res.Servers.Add(i);
+                res.Containers.Add(containers);
+            }
 
-            return containers;
+            return res;
         }
     }
 }

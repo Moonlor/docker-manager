@@ -1,4 +1,5 @@
 using DockerMgr.DTO;
+using DockerMgr.DTO.ContainerDTO;
 using DockerMgr.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,14 +18,15 @@ namespace DockerMgr.Controllers
         }
         
         [AllowAnonymous]
-        [HttpPost, Route("all")]
-        public ActionResult<Msg> GetAll([FromBody] TokenRequestDTO requestDto)
+        [HttpPost, Route("all_by_id")]
+        public ActionResult<Msg> GetAllById([FromBody] GetContainersByIdDTO containersByIdDto)
         {
-            var ip = requestDto.Email;
-            return new Msg{
+            var id = containersByIdDto.Id;
+            var r = new Msg{
                 Message = MsgCode.SUCCESS,
-                Data = _containerService.GetAll(ip)
+                Data = _containerService.GetAllById(id)
             };
+            return r;
         }
     }
 }
