@@ -1,11 +1,12 @@
 import { Component } from 'react';
 import { List, Card } from 'antd';
 import { connect } from 'dva';
+import ContainerList from './components/ContainerList'
 
-@connect(({ monitorPage, container }) => ({
-  monitorPage,
-  containers: container.payload,
-  // loading: container.effects['container/get']
+@connect(({ container, loading }) => ({
+  containers: container.containersList,
+  servers: container.serversList,
+  loading: loading.effects['container/get'],
 }))
 class MonitorPage extends Component {
 
@@ -14,40 +15,31 @@ class MonitorPage extends Component {
     this.state = {};
   }
 
-  componentWillMount()
-  {
-    this.props.dispatch({
-      type: 'container/getAll',
-      payload: { ip: '47.100.187.100'},
-    });
-  }
-
   render() {
-    // const { loading } = this.props;
+    const { loading, servers, containers } = this.props;
 
-    const data = [
-      {
-        title: 'Title 1',
-      },
-      {
-        title: 'Title 2',
-      },
-      {
-        title: 'Title 3',
-      },
-      {
-        title: 'Title 4',
-      },
-    ];
-
+    let data = []
+    if (servers){
+      for (let i = 0; i < servers.length; i++) {
+        const server = servers[i];
+        const container = containers[i];
+        data.push({ server: server, container: container });
+      }
+    }
+    console.log(data);
+    
     return(
+
       <List
-        grid={{ gutter: 16, column: 2 }}
+        itemLayout="vertical"
         dataSource={data}
-        // loading={loading}
+        loading={loading}
         renderItem={item => (
-          <List.Item>
-            <Card title={item.title}>Card content</Card>
+          <List.Item
+            extra={
+              <Card title={'item.server.id'}>{item.server.id}</Card>
+            }>
+            <ContainerList containers={item.container} />
           </List.Item>
         )}
       />

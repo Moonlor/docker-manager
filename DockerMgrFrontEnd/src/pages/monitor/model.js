@@ -7,23 +7,27 @@ export default {
   namespace: 'container',
 
   state: {
-    payload: '2233'
+    serversList: undefined, 
+    containersList: undefined,
   },
 
   effects: {
     *get({ payload }, { call, put }) {
-      console.log(payload);
       const response = yield call(getAllContainers, payload);
+      console.log(response);
       yield put({
         type: 'save',
-        payload: response,
+        payload: {
+          servers: response.data.servers,
+          containers: response.data.containers,
+        },
       });
     }
   },
 
   reducers: {
-    save(state, payload) {
-      return { ...state, payload};
+    save(state, { payload: { servers: serversList, containers: containersList } }) {
+      return { ...state, serversList, containersList};
     },
   },
 
