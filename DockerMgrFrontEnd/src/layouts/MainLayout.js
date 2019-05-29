@@ -68,22 +68,6 @@ class MainLayout extends Component {
             >
               <Menu.Item key="logout" onClick={this.logoutHandler}>登出</Menu.Item>
             </SubMenu>
-            <SubMenu
-              key="sub2"
-              title={
-                <span>
-                  <Icon type="team" />
-                  <span>Team</span>
-                </span>
-              }
-            >
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9">
-              <Icon type="file" />
-              <span>File</span>
-            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
