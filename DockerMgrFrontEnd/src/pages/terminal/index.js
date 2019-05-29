@@ -226,7 +226,7 @@ class TerminalPage extends Component {
           <div style={{ marginBottom: '16px' }}>
             <Alert
               message="镜像格式: ImageName:Tag"
-              description="当服务器中不存在镜像时，会从 dockerHub 拉取镜像"
+              description="当服务器中不存在需要的镜像时，请自行从 dockerHub 拉取需要的镜像"
               type="info"
               showIcon
             />
