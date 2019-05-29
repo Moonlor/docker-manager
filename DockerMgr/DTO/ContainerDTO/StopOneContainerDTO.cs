@@ -6,14 +6,14 @@ using Newtonsoft.Json;
 
 namespace DockerMgr.DTO.ContainerDTO
 {
-    public class ReturnContainersByIdDTO
+    public class StopOneContainerDTO
     {
         [Required] 
-        [JsonProperty("servers")]
-        public List<Server> Servers { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
         
         [Required] 
-        [JsonProperty("containers")]
-        public List<IList<ContainerListResponse>> Containers { get; set; }
+        [JsonProperty("ip")]
+        public string Ip { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 using DockerMgr.Utils;
-using DockerMgr.Utils.ContainerDTO;
+using DockerMgr.DTO.ContainerDTO;
 using DockerMgr.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +25,48 @@ namespace DockerMgr.Controllers
             var r = new Msg{
                 Message = MsgCode.SUCCESS,
                 Data = _containerService.GetAllById(id)
+            };
+            return r;
+        }
+        
+        [AllowAnonymous]
+        [HttpPost, Route("stop")]
+        public ActionResult<Msg> Stop([FromBody] StopOneContainerDTO stopOneContainerDto)
+        {
+            var id = stopOneContainerDto.Id;
+            var ip = stopOneContainerDto.Ip;
+            _containerService.StopOne(id, ip);
+            var r = new Msg{
+                Message = MsgCode.SUCCESS,
+                Data = true
+            };
+            return r;
+        }
+        
+        [AllowAnonymous]
+        [HttpPost, Route("remove")]
+        public ActionResult<Msg> Remove([FromBody] RemoveOneContainerDTO removeOneContainerDto)
+        {
+            var id = removeOneContainerDto.Id;
+            var ip = removeOneContainerDto.Ip;
+            _containerService.RemoveOne(id, ip);
+            var r = new Msg{
+                Message = MsgCode.SUCCESS,
+                Data = true
+            };
+            return r;
+        }
+        
+        [AllowAnonymous]
+        [HttpPost, Route("run")]
+        public ActionResult<Msg> Run([FromBody] RunOneContainerDTO runOneContainerDto)
+        {
+            var image = runOneContainerDto.Image;
+            var ip = runOneContainerDto.Ip;
+            _containerService.RunOne(image, ip);
+            var r = new Msg{
+                Message = MsgCode.SUCCESS,
+                Data = true
             };
             return r;
         }

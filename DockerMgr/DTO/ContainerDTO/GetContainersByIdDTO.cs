@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace DockerMgr.Utils.ContainerDTO
+namespace DockerMgr.DTO.ContainerDTO
 {
     public class GetContainersByIdDTO
     {

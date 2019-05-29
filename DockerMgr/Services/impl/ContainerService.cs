@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Docker.DotNet.Models;
-using DockerMgr.Utils.ContainerDTO;
+using DockerMgr.DTO.ContainerDTO;
 using DockerMgr.Models;
 
 namespace DockerMgr.Services.impl
@@ -38,6 +38,30 @@ namespace DockerMgr.Services.impl
             }
 
             return res;
+        }
+
+        public async void StopOne(string id, string ip)
+        {
+            var client = _pools.GetPoolByIp(ip).Get();
+            await client.Containers.StopContainerAsync(id, new ContainerStopParameters());
+        }
+        
+        public async void RemoveOne(string id, string ip)
+        {
+            var client = _pools.GetPoolByIp(ip).Get();
+            await client.Containers.StopContainerAsync(id, new ContainerStopParameters());
+        }
+        
+        public async void RunOne(string image, string ip)
+        {
+            var client = _pools.GetPoolByIp(ip).Get();
+            var p = new CreateContainerParameters
+            {
+                Image = image,
+                Cmd = new string[] {"/bin/bash"}
+            };
+            var createdContainer = await client.Containers.CreateContainerAsync(p);
+            await client.Containers.StartContainerAsync(createdContainer.ID, new ContainerStartParameters());
         }
     }
 }
