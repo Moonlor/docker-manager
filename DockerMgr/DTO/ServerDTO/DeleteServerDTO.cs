@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace DockerMgr.DTO.ServerDTO
+namespace DockerMgr.Utils.ServerDTO
 {
     public class DeleteServerDTO
     {

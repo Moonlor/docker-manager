@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Docker.DotNet.Models;
-using DockerMgr.DTO.ContainerDTO;
+using DockerMgr.Utils.ContainerDTO;
 
 namespace DockerMgr.Services
 {

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using DockerMgr.DTO.ServerDTO;
+using DockerMgr.Utils.ServerDTO;
 using DockerMgr.Models;
 
 namespace DockerMgr.Services

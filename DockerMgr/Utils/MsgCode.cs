@@ -1,4 +1,4 @@
-namespace DockerMgr.DTO
+namespace DockerMgr.Utils
 {
     public static class MsgCode
     {

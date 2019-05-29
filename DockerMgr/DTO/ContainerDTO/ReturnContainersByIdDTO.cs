@@ -4,7 +4,7 @@ using Docker.DotNet.Models;
 using DockerMgr.Models;
 using Newtonsoft.Json;
 
-namespace DockerMgr.DTO.ContainerDTO
+namespace DockerMgr.Utils.ContainerDTO
 {
     public class ReturnContainersByIdDTO
     {
