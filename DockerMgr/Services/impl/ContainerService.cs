@@ -49,7 +49,7 @@ namespace DockerMgr.Services.impl
         public async void RemoveOne(string id, string ip)
         {
             var client = _pools.GetPoolByIp(ip).Get();
-            await client.Containers.StopContainerAsync(id, new ContainerStopParameters());
+            await client.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters());
         }
         
         public async void RunOne(string image, string ip)
@@ -58,7 +58,8 @@ namespace DockerMgr.Services.impl
             var p = new CreateContainerParameters
             {
                 Image = image,
-                Cmd = new string[] {"/bin/bash"}
+                Cmd = new string[] {"/bin/bash"},
+                Tty = true
             };
             var createdContainer = await client.Containers.CreateContainerAsync(p);
             await client.Containers.StartContainerAsync(createdContainer.ID, new ContainerStartParameters());
