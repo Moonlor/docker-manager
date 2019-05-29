@@ -40,16 +40,16 @@ namespace DockerMgr.Services.impl
             return res;
         }
 
-        public async void StopOne(string id, string ip)
+        public void StopOne(string id, string ip)
         {
-            var client = _pools.GetPoolByIp(ip).Get();
-            await client.Containers.StopContainerAsync(id, new ContainerStopParameters());
+            var client = _pools.GetPoolByIp(ip).Get(); 
+            client.Containers.StopContainerAsync(id, new ContainerStopParameters());
         }
         
-        public async void RemoveOne(string id, string ip)
+        public void RemoveOne(string id, string ip)
         {
-            var client = _pools.GetPoolByIp(ip).Get();
-            await client.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters());
+            var client = _pools.GetPoolByIp(ip).Get(); 
+            client.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters());
         }
         
         public async void RunOne(string image, string ip)
