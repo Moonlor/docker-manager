@@ -1,12 +1,13 @@
 import { Component } from 'react';
 import { Terminal } from 'xterm';
-import { Tabs, Button, Card, Empty } from 'antd';
+import { Tabs, Button, Card, Empty, Modal, Form, Input, Alert, Radio } from 'antd';
 import { connect } from 'dva';
 import * as attach from 'xterm/lib/addons/attach/attach';
 import 'xterm/src/xterm.css';
 
 const { TabPane } = Tabs;
 const ButtonGroup = Button.Group;
+const FormItem = Form.Item;
 
 @connect(({ container, loading }) => ({
   containers: container.containersList,
@@ -14,6 +15,7 @@ const ButtonGroup = Button.Group;
   loading: loading.effects['container/get'],
   loadingStop: loading.effects['container/stop'],
   loadingRemove: loading.effects['container/remove'],
+  confirmLoading: loading.effects['container/run'],
 }))
 class TerminalPage extends Component {
 
@@ -24,8 +26,19 @@ class TerminalPage extends Component {
     this.state = {
       activeKey: '1',
       panes,
+      visible: false
     };
     Terminal.applyAddon(attach);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.confirmLoading !== nextProps.confirmLoading) {
+      if (nextProps.confirmLoading) {
+        this.setState({
+          visible: !nextProps.confirmLoading
+        })
+      }
+    }
   }
 
   onChange = activeKey => {
@@ -98,22 +111,70 @@ class TerminalPage extends Component {
     this.setState({ panes, activeKey });
   };
 
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  handleOk = () => {
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        const { imageName, selectedIp } = values;
+        const { dispatch } = this.props;
+        dispatch({
+          type: 'container/run',
+          payload: {
+            image: imageName,
+            ip: selectedIp
+          },
+        });
+        this.setState({
+          confirmLoading: true,
+        });
+        setTimeout(() => {
+          this.setState({
+            visible: false,
+          });
+        }, 3000);
+      }
+    });
+  };
+
+  handleCancel = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+
   render() {
 
     const gridStyle = {
       width: '50%',
       textAlign: 'center',
     };
-    const { servers, containers, loading, loadingStop, loadingRemove } = this.props;
+
+    const { servers, containers, loading, loadingStop, loadingRemove, confirmLoading } = this.props;
+    const { visible } = this.state;
+    const { getFieldDecorator } = this.props.form
 
     let serverList = [];
+    let radioList = []
+    let defaultIp = null;
     if (servers) {
       for (let i = 0; i < servers.length; i++) {
         const server = servers[i];
+        radioList.push(<Radio value={server.ip} key={server.ip} >{server.ip}</Radio>)
+        defaultIp = server.ip;
         const containerList = containers[i];
         serverList.push({ server: server, containerList: containerList });
       }
     }
+
+    let imageList = [];
+    ['ubuntu:latest', 'python:3.6'].forEach(e => {
+      imageList.push(<Radio value={e} key={e} >{e}</Radio>)
+    });
 
     const serverCards = serverList.map((e) =>
       <Card title={"服务器 " + e.server.ip} key={e.server.ip} size='small'>
@@ -136,15 +197,78 @@ class TerminalPage extends Component {
                   <Button type="danger" icon="delete" disabled>移除</Button>
                   :
                   <Button type="danger" icon="delete" onClick={this.delete.bind(this, c.Id, e.server.ip)} loading={loadingRemove}>移除</Button>
-              }
+                }
               </ButtonGroup>
             </Card.Grid>)
         }
       </Card>
     );
 
+    let addContainerButton;
+
+    if (servers) {
+      addContainerButton = <Button type="primary" onClick={this.showModal} style={{ marginBottom: '16px' }}>启动新的容器</Button>;
+    } else {
+      addContainerButton = null;
+    }
+
     return (
       <div>
+
+        {addContainerButton}
+
+        <Modal
+          title="添加新服务器"
+          visible={visible}
+          confirmLoading={confirmLoading}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+        >
+          <div style={{ marginBottom: '16px' }}>
+            <Alert
+              message="镜像格式: ImageName:Tag"
+              description="当服务器中不存在镜像时，会从 dockerHub 拉取镜像"
+              type="info"
+              showIcon
+            />
+          </div>
+
+          <div style={{ marginBottom: '16px' }}>
+            
+          </div>
+
+          <Form onSubmit={this.handleOk}>
+            <Form.Item>
+              {getFieldDecorator('selectedIp', {
+                rules: [
+                  {
+                    required: true,
+                    message: "ip地址",
+                  }
+                ],
+              })(
+                <Radio.Group defaultValue={defaultIp}>
+                  {radioList}
+                </Radio.Group>
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('imageName', {
+                rules: [
+                  {
+                    required: true,
+                    message: "镜像名",
+                  }
+                ],
+              })(
+                <Radio.Group defaultValue={defaultIp}>
+                  {imageList}
+                </Radio.Group>
+              )}
+            </Form.Item>
+          </Form>
+        </Modal>
+
         <div>
           {serverCards}
         </div>
@@ -169,4 +293,4 @@ class TerminalPage extends Component {
   }
 }
 
-export default TerminalPage;
+export default Form.create()(TerminalPage);

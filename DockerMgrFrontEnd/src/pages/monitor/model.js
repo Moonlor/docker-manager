@@ -1,4 +1,4 @@
-import { getAllContainers, AddServer, DeleteServer, StopContainer, RemoveContainer } from './service';
+import { getAllContainers, AddServer, DeleteServer, StopContainer, RemoveContainer, RunContainer } from './service';
 import { getAuthority, getUserInfo } from '@/utils/authority';
 
 export default {
@@ -22,7 +22,7 @@ export default {
     },
 
     *addNewServer({ payload: p }, { call, put }) {
-      const r = yield call(AddServer, p);
+      yield call(AddServer, p);
       const { id } = getUserInfo();
       const response = yield call(getAllContainers, {id: id});
       yield put({
@@ -35,7 +35,7 @@ export default {
     },
 
     *delete({ payload }, { call, put }) {
-      const r = yield call(DeleteServer, payload);
+      yield call(DeleteServer, payload);
       const { id } = getUserInfo();
       const response = yield call(getAllContainers, { id: id });
       yield put({
@@ -48,7 +48,7 @@ export default {
     },
 
     *stop({ payload }, { call, put }) {
-      const r = yield call(StopContainer, payload);
+      yield call(StopContainer, payload);
       const { id } = getUserInfo();
       const response = yield call(getAllContainers, { id: id });
       yield put({
@@ -61,7 +61,20 @@ export default {
     },
 
     *remove({ payload }, { call, put }) {
-      const r = yield call(RemoveContainer, payload);
+      yield call(RemoveContainer, payload);
+      const { id } = getUserInfo();
+      const response = yield call(getAllContainers, { id: id });
+      yield put({
+        type: 'save',
+        payload: {
+          servers: response.data.servers,
+          containers: response.data.containers,
+        },
+      });
+    },
+
+    *run({ payload }, { call, put }) {
+      yield call(RunContainer, payload);
       const { id } = getUserInfo();
       const response = yield call(getAllContainers, { id: id });
       yield put({

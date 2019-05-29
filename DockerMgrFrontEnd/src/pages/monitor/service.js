@@ -35,3 +35,10 @@ export async function RemoveContainer(params) {
     body: JSON.stringify(params)
   });
 }
+
+export async function RunContainer(params) {
+  return request(`${DOMAIN}/api/container/run`, {
+    method: 'POST',
+    body: JSON.stringify(params)
+  });
+}
