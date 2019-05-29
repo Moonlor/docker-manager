@@ -12,6 +12,8 @@ const ButtonGroup = Button.Group;
   containers: container.containersList,
   servers: container.serversList,
   loading: loading.effects['container/get'],
+  loadingStop: loading.effects['container/stop'],
+  loadingRemove: loading.effects['container/remove'],
 }))
 class TerminalPage extends Component {
 
@@ -55,6 +57,28 @@ class TerminalPage extends Component {
 
   };
 
+  stop = (id, ip) => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'container/stop',
+      payload: {
+        id: id,
+        ip: ip,
+      },
+    });
+  };
+
+  delete = (id, ip) => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'container/remove',
+      payload: {
+        id: id,
+        ip: ip,
+      },
+    });
+  };
+
   remove = targetKey => {
     let activeKey = this.state.activeKey;
     let lastIndex;
@@ -80,7 +104,7 @@ class TerminalPage extends Component {
       width: '50%',
       textAlign: 'center',
     };
-    const { servers, containers, loading } = this.props;
+    const { servers, containers, loading, loadingStop, loadingRemove } = this.props;
 
     let serverList = [];
     if (servers) {
@@ -96,14 +120,23 @@ class TerminalPage extends Component {
         {
           e.containerList.map((c) =>
             <Card.Grid style={gridStyle} key={c.Id}> 
-              <ButtonGroup >
+              <ButtonGroup style={{marginRight: '16px', marginBottom: '16px'}}>
                 <Button type="primary" disabled icon="cloud">{`${c.Image}`}</Button>
                 <Button type="primary" disabled icon="tag">{`${c.Id.slice(0, 5)}`}</Button>
-                {c.State === 'running' ? 
+                {c.State === 'running' ?
                   <Button type="primary" icon="desktop" onClick={this.add.bind(this, c.Id, c.Image, e.server.ip)} >终端</Button>
                   :
                   <Button type="danger" icon="desktop" >终端(不可用)</Button>
                 }
+              </ButtonGroup>
+
+              <ButtonGroup >
+                <Button type="danger" icon="stop" onClick={this.stop.bind(this, c.Id, e.server.ip)} loading={loadingStop}>停止</Button>
+                {c.State === 'running' ?
+                  <Button type="danger" icon="delete" disabled>移除</Button>
+                  :
+                  <Button type="danger" icon="delete" onClick={this.delete.bind(this, c.Id, e.server.ip)} loading={loadingRemove}>移除</Button>
+              }
               </ButtonGroup>
             </Card.Grid>)
         }

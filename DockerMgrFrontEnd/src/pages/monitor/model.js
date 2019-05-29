@@ -1,4 +1,4 @@
-import { getAllContainers, AddServer, DeleteServer } from './service';
+import { getAllContainers, AddServer, DeleteServer, StopContainer, RemoveContainer } from './service';
 import { getAuthority, getUserInfo } from '@/utils/authority';
 
 export default {
@@ -36,6 +36,32 @@ export default {
 
     *delete({ payload }, { call, put }) {
       const r = yield call(DeleteServer, payload);
+      const { id } = getUserInfo();
+      const response = yield call(getAllContainers, { id: id });
+      yield put({
+        type: 'save',
+        payload: {
+          servers: response.data.servers,
+          containers: response.data.containers,
+        },
+      });
+    },
+
+    *stop({ payload }, { call, put }) {
+      const r = yield call(StopContainer, payload);
+      const { id } = getUserInfo();
+      const response = yield call(getAllContainers, { id: id });
+      yield put({
+        type: 'save',
+        payload: {
+          servers: response.data.servers,
+          containers: response.data.containers,
+        },
+      });
+    },
+
+    *remove({ payload }, { call, put }) {
+      const r = yield call(RemoveContainer, payload);
       const { id } = getUserInfo();
       const response = yield call(getAllContainers, { id: id });
       yield put({

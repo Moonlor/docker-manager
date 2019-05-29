@@ -21,3 +21,17 @@ export async function DeleteServer(params) {
     body: JSON.stringify(params)
   });
 }
+
+export async function StopContainer(params) {
+  return request(`${DOMAIN}/api/container/stop`, {
+    method: 'POST',
+    body: JSON.stringify(params)
+  });
+}
+
+export async function RemoveContainer(params) {
+  return request(`${DOMAIN}/api/container/remove`, {
+    method: 'POST',
+    body: JSON.stringify(params)
+  });
+}
