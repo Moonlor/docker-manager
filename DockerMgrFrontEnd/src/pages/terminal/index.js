@@ -1,13 +1,12 @@
 import { Component } from 'react';
 import { Terminal } from 'xterm';
-import { Tabs, Button, Card, Empty, Modal, Form, Input, Alert, Radio } from 'antd';
+import { Tabs, Button, Card, Empty, Modal, Form, Alert, Radio } from 'antd';
 import { connect } from 'dva';
 import * as attach from 'xterm/lib/addons/attach/attach';
 import 'xterm/src/xterm.css';
 
 const { TabPane } = Tabs;
 const ButtonGroup = Button.Group;
-const FormItem = Form.Item;
 
 @connect(({ container, loading }) => ({
   containers: container.containersList,

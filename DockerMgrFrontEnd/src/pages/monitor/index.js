@@ -22,6 +22,16 @@ class MonitorPage extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.confirmLoading !== nextProps.confirmLoading) {
+      if (nextProps.confirmLoading) {
+        this.setState({
+          visible: !nextProps.confirmLoading
+        })
+      }
+    }
+  }
+
   showModal = () => {
     this.setState({
       visible: true,
