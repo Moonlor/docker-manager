@@ -28,5 +28,18 @@ namespace DockerMgr.Controllers
             };
             return r;
         }
+        
+        [AllowAnonymous]
+        [HttpPost, Route("delete")]
+        public ActionResult<Msg> Delete([FromBody] DeleteServerDTO deleteServerDto)
+        {
+            var r = new Msg{
+                Message = MsgCode.SUCCESS,
+                Data = _serverService.Delete(deleteServerDto)
+            };
+            return r;
+        }
+        
+        
     }
 }
