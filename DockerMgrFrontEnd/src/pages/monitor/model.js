@@ -1,4 +1,4 @@
-import { getAllContainers, AddServer } from './service';
+import { getAllContainers, AddServer, DeleteServer } from './service';
 import { getAuthority, getUserInfo } from '@/utils/authority';
 
 export default {
@@ -32,7 +32,20 @@ export default {
           containers: response.data.containers,
         },
       });
-    }
+    },
+
+    *delete({ payload }, { call, put }) {
+      const r = yield call(DeleteServer, payload);
+      const { id } = getUserInfo();
+      const response = yield call(getAllContainers, { id: id });
+      yield put({
+        type: 'save',
+        payload: {
+          servers: response.data.servers,
+          containers: response.data.containers,
+        },
+      });
+    },
   },
 
   reducers: {

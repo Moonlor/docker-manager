@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { List, Modal, Button, Form, Input } from 'antd';
+import { List, Modal, Button, Form, Input, Alert } from 'antd';
 import { connect } from 'dva';
 import { getUserInfo } from '@/utils/authority';
 import ContainerList from './components/ContainerList'
@@ -85,6 +85,15 @@ class MonitorPage extends Component {
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
+          <div style={{marginBottom: '16px'}}>
+            <Alert
+              message="请确保Docker Daemon开启了远程调用"
+              description="编辑 /usr/lib/systemd/system/docker.service , 替换: ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock, 然后分别运行# systemctl daemon-reload # systemctl restart docker"
+              type="info"
+              showIcon
+            />
+          </div>
+          
           <Form onSubmit={this.handleOk}>
             <FormItem>
               {getFieldDecorator('provider', {
@@ -144,7 +153,7 @@ class MonitorPage extends Component {
           loading={loading}
           renderItem={item => (
             <List.Item>
-              <ContainerList containers={item.container} server={item.server} />
+              <ContainerList containers={item.container} server={item.server} dispatch={this.props.dispatch}/>
             </List.Item>
           )}
         />

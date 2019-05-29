@@ -14,3 +14,10 @@ export async function AddServer(params) {
     body: JSON.stringify(params)
   });
 }
+
+export async function DeleteServer(params) {
+  return request(`${DOMAIN}/api/server/delete`, {
+    method: 'POST',
+    body: JSON.stringify(params)
+  });
+}

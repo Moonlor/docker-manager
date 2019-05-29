@@ -1,5 +1,7 @@
 import { Component } from 'react';
-import { List, Card, Tag, Timeline } from 'antd';
+import { List, Card, Tag, Timeline, Popconfirm, Button } from 'antd';
+import { getUserInfo } from '@/utils/authority';
+
 
 class ContainerList extends Component {
 
@@ -8,6 +10,18 @@ class ContainerList extends Component {
     this.state = {};
   }
 
+  confirm = (id) => {
+    const { dispatch } = this.props;
+    const { id: userId } = getUserInfo();
+    dispatch({
+      type: 'container/delete',
+      payload: {
+        id: id,
+        userId: userId
+      },
+    });
+  };
+
   render() {
     const { containers, server } = this.props;
 
@@ -15,8 +29,18 @@ class ContainerList extends Component {
       <div>
         <Card
           style={{ margin: '0 0 16px 0' }}
-          title={'服务器IP地址: ' + server.ip}
-          extra={'端口: ' + server.endpoint}
+          title={'服务器IP地址: ' + server.ip + ' 端口: ' + server.endpoint}
+          extra={<div>
+            <Popconfirm
+              placement="leftTop"
+              title="确定要删除该服务器?(容器并不会被移除, 之后可重新添加该服务器)"
+              onConfirm={this.confirm.bind(this, server.id) }
+              okText="确定"
+              cancelText="取消"
+            >
+              <Button type="danger">删除</Button>
+            </Popconfirm>
+          </div>}
         >
           <Card.Meta
             title={server.introduction}
@@ -47,8 +71,8 @@ class ContainerList extends Component {
                       <Timeline.Item color="red">当前状态 <Tag color="red"><code>{item.Status}</code></Tag></Timeline.Item>
                     }
                   </Timeline>
-                      
-                      
+
+
                   <div>
                     <span>Gateway: <Tag>{item.NetworkSettings.Networks.bridge.Gateway}</Tag><p></p></span>
                     <span>IPAddress: <Tag>{item.NetworkSettings.Networks.bridge.IPAddress}</Tag><p></p></span>
