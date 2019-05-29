@@ -171,7 +171,7 @@ class TerminalPage extends Component {
     }
 
     let imageList = [];
-    ['ubuntu:latest', 'python:3.6'].forEach(e => {
+    ['ubuntu:latest', 'python:3.6', 'nginx:latest'].forEach(e => {
       imageList.push(<Radio value={e} key={e} >{e}</Radio>)
     });
 
