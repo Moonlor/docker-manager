@@ -4,7 +4,7 @@ using System.Reflection.Metadata;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace DockerMgr.Utils
+namespace DockerMgr.DTO
 {
     public class Msg
     {

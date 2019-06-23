@@ -1,4 +1,4 @@
-using DockerMgr.Utils;
+using DockerMgr.DTO;
 using DockerMgr.Models;
 
 namespace DockerMgr.Services

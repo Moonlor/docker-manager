@@ -1,7 +1,8 @@
-using DockerMgr.Utils;
+using DockerMgr.DTO;
 using DockerMgr.DTO.ContainerDTO;
-using DockerMgr.Utils.ServerDTO;
+using DockerMgr.DTO.ServerDTO;
 using DockerMgr.Services;
+using DockerMgr.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

@@ -17,10 +17,10 @@ namespace DockerMgr.Services.impl
             _serverService = serverService;
         }
         
-        public ReturnContainersByIdDTO GetAllById(string userId)
+        public ReturnContainersById GetAllById(string userId)
         {
             List<Server> servers = _serverService.GetAll(userId);
-            var res = new ReturnContainersByIdDTO()
+            var res = new ReturnContainersById()
             {
                 Servers = new List<Server>(),
                 Containers = new List<IList<ContainerListResponse>>()
@@ -43,16 +43,16 @@ namespace DockerMgr.Services.impl
         public void StopOne(string id, string ip)
         {
             var client = _pools.GetPoolByIp(ip).Get(); 
-            client.Containers.StopContainerAsync(id, new ContainerStopParameters());
+            client.Containers.StopContainerAsync(id, new ContainerStopParameters()).GetAwaiter().GetResult();
         }
         
         public void RemoveOne(string id, string ip)
         {
             var client = _pools.GetPoolByIp(ip).Get(); 
-            client.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters());
+            client.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters()).GetAwaiter().GetResult();
         }
         
-        public async void RunOne(string image, string ip)
+        public void RunOne(string image, string ip)
         {
             var client = _pools.GetPoolByIp(ip).Get();
             var p = new CreateContainerParameters
@@ -61,8 +61,8 @@ namespace DockerMgr.Services.impl
                 Cmd = new string[] {"/bin/bash"},
                 Tty = true
             };
-            var createdContainer = await client.Containers.CreateContainerAsync(p);
-            await client.Containers.StartContainerAsync(createdContainer.ID, new ContainerStartParameters());
+            var createdContainer = client.Containers.CreateContainerAsync(p).GetAwaiter().GetResult();
+            client.Containers.StartContainerAsync(createdContainer.ID, new ContainerStartParameters()).GetAwaiter().GetResult();
         }
     }
 }

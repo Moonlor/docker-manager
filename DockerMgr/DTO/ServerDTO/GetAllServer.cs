@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace DockerMgr.Utils.ServerDTO
+namespace DockerMgr.DTO.ServerDTO
 {
     public class GetAllServer
     {

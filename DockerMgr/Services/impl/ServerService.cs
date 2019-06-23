@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using DockerMgr.Utils.ServerDTO;
+using DockerMgr.DTO.ServerDTO;
 using DockerMgr.Models;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;

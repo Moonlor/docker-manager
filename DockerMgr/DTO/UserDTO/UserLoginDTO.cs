@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace DockerMgr.Utils
+namespace DockerMgr.DTO
 {
     public class UserLoginDTO
     {

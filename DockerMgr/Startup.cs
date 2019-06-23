@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DockerMgr.Utils;
+using DockerMgr.DTO;
 using DockerMgr.Middleware;
 using DockerMgr.Models;
 using DockerMgr.Services;
@@ -61,6 +61,7 @@ namespace DockerMgr
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IContainerService, ContainerService>();
             services.AddScoped<IServerService, ServerService>();
+            services.AddScoped<IImageService, ImageService>();
             services.AddSingleton<IDockerClientPoolCollection, DockerClientPoolCollection>();
         }
         

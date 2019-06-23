@@ -7,7 +7,7 @@ namespace DockerMgr.Services
 {
     public interface IContainerService
     {
-        ReturnContainersByIdDTO GetAllById(string ip);
+        ReturnContainersById GetAllById(string ip);
 
         void StopOne(string id, string ip);
 
