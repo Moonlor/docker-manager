@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PWEncrypt", "PWEncrypt\PWEn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerMgrTest", "DockerMgrTest\DockerMgrTest.csproj", "{76B4525C-7E6C-49F9-A566-ADBB0901B300}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRPublisher", "SignalRPublisher\SignalRPublisher.csproj", "{CE106544-840C-487A-89C4-658B2189B2F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{76B4525C-7E6C-49F9-A566-ADBB0901B300}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76B4525C-7E6C-49F9-A566-ADBB0901B300}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76B4525C-7E6C-49F9-A566-ADBB0901B300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE106544-840C-487A-89C4-658B2189B2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE106544-840C-487A-89C4-658B2189B2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE106544-840C-487A-89C4-658B2189B2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE106544-840C-487A-89C4-658B2189B2F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
