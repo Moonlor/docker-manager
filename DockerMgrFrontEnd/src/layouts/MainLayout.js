@@ -57,6 +57,18 @@ class MainLayout extends Component {
                 <Link className={styles.menuLink} to="/terminal">容器</Link>
               </span>
             </Menu.Item>
+            <Menu.Item key="/image">
+              <Icon type="hdd" />
+              <span>
+                <Link className={styles.menuLink} to="/image">镜像</Link>
+              </span>
+            </Menu.Item>
+            <Menu.Item key="/image/hub">
+              <Icon type="cloud-download" />
+              <span>
+                <Link className={styles.menuLink} to="/image/hub">Hub</Link>
+              </span>
+            </Menu.Item>
             <SubMenu
               key="sub1"
               title={

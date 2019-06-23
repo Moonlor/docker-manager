@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace DockerMgr.DTO.ContainerDTO
 {
-    public class ReturnContainersByIdDTO
+    public class ReturnContainersById
     {
         [Required] 
         [JsonProperty("servers")]

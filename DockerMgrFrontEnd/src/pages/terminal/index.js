@@ -1,9 +1,11 @@
 import { Component } from 'react';
 import { Terminal } from 'xterm';
-import { Tabs, Button, Card, Empty, Modal, Form, Alert, Radio } from 'antd';
+import { Tabs, Button, Card, Empty, Modal, Form, Alert, Radio, Skeleton } from 'antd';
 import { connect } from 'dva';
 import * as attach from 'xterm/lib/addons/attach/attach';
 import 'xterm/src/xterm.css';
+
+import { WS_DOMAIN } from '@/utils/constants';
 
 const { TabPane } = Tabs;
 const ButtonGroup = Button.Group;
@@ -25,7 +27,8 @@ class TerminalPage extends Component {
     this.state = {
       activeKey: '1',
       panes,
-      visible: false
+      visible: false,
+      images: [],
     };
     Terminal.applyAddon(attach);
   }
@@ -59,7 +62,7 @@ class TerminalPage extends Component {
       term.writeln("welcome to use docker web terminal!");
       term.writeln(`Current container: ${image}`);
       term.writeln("-----------------------------------");
-      let socket = new WebSocket(`ws://127.0.0.1:5000/ws?token=${id}&ip=${ip}`);
+      let socket = new WebSocket(`${WS_DOMAIN}/terminal?token=${id}&ip=${ip}`);
       term.attach(socket);
       socket.onclose = function () {
         term.writeln("closed. Thank you for use!");
@@ -146,6 +149,13 @@ class TerminalPage extends Component {
     });
   };
 
+  handleServerRadioChange = (e) => {
+    console.log(e.target.value);
+    this.setState({
+      images: ['ubuntu:latest', 'python:3.6', 'nginx:latest']
+    })
+  }
+
   render() {
 
     const gridStyle = {
@@ -154,29 +164,27 @@ class TerminalPage extends Component {
     };
 
     const { servers, containers, loading, loadingStop, loadingRemove, confirmLoading } = this.props;
-    const { visible } = this.state;
+    const { visible, images } = this.state;
     const { getFieldDecorator } = this.props.form
 
     let serverList = [];
-    let radioList = []
-    let defaultIp = null;
+    let serverRadioList = []
     if (servers) {
       for (let i = 0; i < servers.length; i++) {
         const server = servers[i];
-        radioList.push(<Radio value={server.ip} key={server.ip} >{server.ip}</Radio>)
-        defaultIp = server.ip;
+        serverRadioList.push(<Radio value={server.ip} key={server.ip} >{server.ip}</Radio>)
         const containerList = containers[i];
         serverList.push({ server: server, containerList: containerList });
       }
     }
 
     let imageList = [];
-    ['ubuntu:latest', 'python:3.6', 'nginx:latest'].forEach(e => {
+    images.forEach(e => {
       imageList.push(<Radio value={e} key={e} >{e}</Radio>)
     });
 
     const serverCards = serverList.map((e) =>
-      <Card title={"服务器 " + e.server.ip} key={e.server.ip} size='small'>
+      <Card title={"服务器 " + e.server.ip} key={e.server.ip} size='small' style={{ marginTop: '16px'}}>
         {
           e.containerList.map((c) =>
             <Card.Grid style={gridStyle} key={c.Id}> 
@@ -217,7 +225,7 @@ class TerminalPage extends Component {
         {addContainerButton}
 
         <Modal
-          title="添加新服务器"
+          title="启动新容器"
           visible={visible}
           confirmLoading={confirmLoading}
           onOk={this.handleOk}
@@ -237,32 +245,42 @@ class TerminalPage extends Component {
           </div>
 
           <Form onSubmit={this.handleOk}>
+
+            <h2> 容器所在服务器 </h2>
+
             <Form.Item>
               {getFieldDecorator('selectedIp', {
                 rules: [
                   {
                     required: true,
-                    message: "ip地址",
+                    message: "请选择服务器ip地址",
                   }
                 ],
               })(
-                <Radio.Group defaultValue={defaultIp}>
-                  {radioList}
+                <Radio.Group onChange={this.handleServerRadioChange}>
+                  {serverRadioList}
                 </Radio.Group>
               )}
             </Form.Item>
+
+            <h2> 镜像 </h2>
+
             <Form.Item>
               {getFieldDecorator('imageName', {
                 rules: [
                   {
                     required: true,
-                    message: "镜像名",
+                    message: "请选择需要启动的镜像名",
                   }
                 ],
               })(
-                <Radio.Group defaultValue={defaultIp}>
-                  {imageList}
-                </Radio.Group>
+                <div>
+                  {images.length === 0 ? <Skeleton /> :
+                  <Radio.Group>
+                    {imageList}
+                  </Radio.Group>
+                  }
+                </div>
               )}
             </Form.Item>
           </Form>
@@ -271,6 +289,7 @@ class TerminalPage extends Component {
         <div>
           {serverCards}
         </div>
+
         <div style={{ marginTop: '16px' }}>
           {loading || !servers ? <Empty /> :
           <Tabs
