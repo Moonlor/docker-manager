@@ -29,7 +29,7 @@ namespace DockerMgr.Middleware
             // 判断是否为websocket请求
             if (context.WebSockets.IsWebSocketRequest)
             {
-                if (context.Request.Path == "/ws")
+                if (context.Request.Path == "/terminal")
                 {
                     if (context.WebSockets.IsWebSocketRequest) 
                     {
@@ -44,7 +44,7 @@ namespace DockerMgr.Middleware
                 }
             }
             
-            // await this._next(context);
+            await this._next(context);
         }
         
         private async Task Echo(HttpContext context, WebSocket _webSocket, string token, string ip) 
