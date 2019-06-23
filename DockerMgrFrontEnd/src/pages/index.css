@@ -6,9 +6,9 @@
 }
 
 .welcome {
-  height: 328px;
-  background: url(../assets/yay.jpg) no-repeat center 0;
-  background-size: 388px 328px;
+  height: 650px;
+  background: url(../assets/docker.png) no-repeat center 0;
+  background-size: 650px 430px;
 }
 
 .list {
