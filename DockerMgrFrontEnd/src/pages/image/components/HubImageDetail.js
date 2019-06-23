@@ -22,12 +22,12 @@ class HubImageDetail extends Component {
           {image.is_official ?
             <div>
               <a target="_Blank" rel="noopener noreferrer" href={`https://hub.docker.com/_/${image.name}`} style={{ marginRight: '16px' }}><Button type="primary" icon="eye">查看详细信息</Button></a>
-              <a target="_Blank" rel="noopener noreferrer" href={`https://hub.docker.com/_/${image.name}?tab=tags`}><Button type="primary" icon="eye">查看Tag</Button></a>
+              <a target="_Blank" rel="noopener noreferrer" href={`https://hub.docker.com/_/${image.name}?tab=tags`}><Button type="primary" icon="tag">查看Tag</Button></a>
             </div>
             :
             <div>
               <a target="_Blank" rel="noopener noreferrer" href={`https://hub.docker.com/r/${image.name}`} style={{ marginRight: '16px' }}><Button type="primary" icon="eye">查看详细信息</Button></a>
-              <a target="_Blank" rel="noopener noreferrer" href={`https://hub.docker.com/r/${image.name}/tags`}><Button type="primary" icon="eye">查看Tag</Button></a>
+              <a target="_Blank" rel="noopener noreferrer" href={`https://hub.docker.com/r/${image.name}/tags`}><Button type="primary" icon="tag">查看Tag</Button></a>
             </div>
           }
         </Card>

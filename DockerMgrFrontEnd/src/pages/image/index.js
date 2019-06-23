@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Tabs, Button, Card, Empty, Modal, Form, Alert, List, Skeleton } from 'antd';
+import { Empty, Form, List } from 'antd';
 import { connect } from 'dva';
 
 import ImageList from './components/ImageList'
@@ -32,14 +32,7 @@ class ImagePage extends Component {
 
   render() {
 
-    const gridStyle = {
-      width: '50%',
-      textAlign: 'center',
-    };
-
-    const { servers, images, loadingGetAllImages, loadingRemove, confirmLoading } = this.props;
-    const { visible } = this.state;
-    const { getFieldDecorator } = this.props.form
+    const { images, loadingGetAllImages,} = this.props;
 
     let data = []
     if (images) {
