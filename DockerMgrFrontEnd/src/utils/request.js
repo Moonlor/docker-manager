@@ -24,10 +24,10 @@ function checkStatus(response) {
   const { status, url } = response;
 
   if (response.status >= 200 && response.status < 300) {
-    notification.success({
-      message: `${status}`,
-      description: text,
-    })
+    // notification.success({
+    //   message: `${status}`,
+    //   description: text,
+    // })
     return response;
   } else {
     notification.error({
