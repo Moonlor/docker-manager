@@ -10,7 +10,8 @@ import { WS_DOMAIN } from '@/utils/constants';
 const { TabPane } = Tabs;
 const ButtonGroup = Button.Group;
 
-@connect(({ container, loading }) => ({
+@connect(({ container, loading, image }) => ({
+  images: image.imageList,
   containers: container.containersList,
   servers: container.serversList,
   loading: loading.effects['container/get'],
@@ -152,7 +153,7 @@ class TerminalPage extends Component {
   handleServerRadioChange = (e) => {
     console.log(e.target.value);
     this.setState({
-      images: ['ubuntu:latest', 'python:3.6', 'nginx:latest']
+      images: this.props.images[e.target.value]
     })
   }
 
@@ -180,7 +181,7 @@ class TerminalPage extends Component {
 
     let imageList = [];
     images.forEach(e => {
-      imageList.push(<Radio value={e} key={e} >{e}</Radio>)
+      imageList.push(<Radio value={e.RepoTags[0]} key={e.RepoTags[0]} >{e.RepoTags[0]}</Radio>)
     });
 
     const serverCards = serverList.map((e) =>

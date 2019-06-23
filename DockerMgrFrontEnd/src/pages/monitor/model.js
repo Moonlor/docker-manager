@@ -1,5 +1,6 @@
 import { getAllContainers, AddServer, DeleteServer, StopContainer, RemoveContainer, RunContainer } from './service';
 import { getAuthority, getUserInfo } from '@/utils/authority';
+import { notification } from 'antd';
 
 export default {
   namespace: 'container',
@@ -45,6 +46,9 @@ export default {
           containers: response.data.containers,
         },
       });
+      notification.success({
+        message: '删除成功'
+      })
     },
 
     *stop({ payload }, { call, put }) {
@@ -58,6 +62,9 @@ export default {
           containers: response.data.containers,
         },
       });
+      notification.success({
+        message: '停止成功'
+      })
     },
 
     *remove({ payload }, { call, put }) {
@@ -71,6 +78,9 @@ export default {
           containers: response.data.containers,
         },
       });
+      notification.success({
+        message: '移除成功'
+      })
     },
 
     *run({ payload }, { call, put }) {
@@ -84,6 +94,9 @@ export default {
           containers: response.data.containers,
         },
       });
+      notification.success({
+        message: '已成功启动容器'
+      })
     },
   },
 
