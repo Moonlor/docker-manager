@@ -1,3 +1,4 @@
+using System;
 using DockerMgr.DTO;
 using DockerMgr.DTO.ImageDTO;
 using DockerMgr.Services;
@@ -64,6 +65,63 @@ namespace DockerMgr.Controllers
             var r = new Msg{
                 Message = MsgCode.SUCCESS,
                 Data = _imageService.ImageDetail(ip, name)
+            };
+            return r;
+        }
+        
+        [AllowAnonymous]
+        [HttpPost, Route("delete")]
+        public ActionResult<Msg> Delete([FromBody] DeleteImageDTO deleteImageDto)
+        {
+            var ip = deleteImageDto.Ip;
+            var id = deleteImageDto.Id;
+            var r = new Msg{
+                Message = MsgCode.SUCCESS,
+                Data = _imageService.DeleteImage(ip, id)
+            };
+            return r;
+        }
+        
+        [AllowAnonymous]
+        [HttpPost, Route("pull")]
+        public ActionResult<Msg> PullImage([FromBody] PullImageDTO pullImageDto)
+        {
+            var ip = pullImageDto.Ip;
+            var name = pullImageDto.Name;
+            var tag = pullImageDto.Tag;
+            var guid = Guid.NewGuid().ToString();
+            
+            try
+            {
+                _imageService.PullImage(ip, name, tag, guid);
+            }
+            catch (Exception e)
+            {
+                var er = new Msg{
+                    Message = MsgCode.RES_ERROR,
+                    Data = e
+                };
+
+                return er;
+            }
+            
+            var r = new Msg{
+                Message = MsgCode.SUCCESS,
+                Data = guid
+            };
+            return r;
+        }
+        
+        
+        [AllowAnonymous]
+        [HttpPost, Route("query")]
+        public ActionResult<Msg> queryImage([FromBody] QueryImageDTO queryImageDto)
+        {
+            var guid = queryImageDto.Guid;
+
+            var r = new Msg{
+                Message = MsgCode.SUCCESS,
+                Data = _imageService.PullDetail(guid)
             };
             return r;
         }

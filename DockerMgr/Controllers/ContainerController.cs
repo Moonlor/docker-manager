@@ -1,3 +1,4 @@
+using System;
 using DockerMgr.DTO;
 using DockerMgr.DTO.ContainerDTO;
 using DockerMgr.Services;
@@ -64,7 +65,20 @@ namespace DockerMgr.Controllers
         {
             var image = runOneContainerDto.Image;
             var ip = runOneContainerDto.Ip;
-            _containerService.RunOne(image, ip);
+            try
+            {
+                _containerService.RunOne(image, ip);
+            }
+            catch (Exception e)
+            {
+                var er = new Msg{
+                    Message = MsgCode.RES_ERROR,
+                    Data = e
+                };
+
+                return er;
+            }
+            
             var r = new Msg{
                 Message = MsgCode.SUCCESS,
                 Data = true

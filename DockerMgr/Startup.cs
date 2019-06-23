@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using SignalRPublisher;
 
 namespace DockerMgr
 {
@@ -55,6 +56,8 @@ namespace DockerMgr
                     ValidateAudience = false
                 };
             });
+            
+            services.AddSignalR();
 
             services.AddScoped<IAuthenticateService, TokenAuthenticationService>();
             services.AddScoped<IUserManagementService, UserManagementService>();
@@ -83,6 +86,11 @@ namespace DockerMgr
             app.UseAuthentication();
 //            app.UseHttpsRedirection();
             app.UseMvc();
+            
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<PublishHub>("/publishhub");
+            });
 
             var webSocketOptions = new WebSocketOptions()
             {

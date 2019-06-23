@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Docker.DotNet.Models;
 using DockerMgr.DTO.ImageDTO;
+using DockerMgr.Models;
 
 namespace DockerMgr.Services
 {
@@ -13,5 +14,11 @@ namespace DockerMgr.Services
         IList<ImageSearchResponse> SearchImages(string keyWord, string ip);
 
         ImageInspectResponse ImageDetail(string ip, string name);
+
+        IList<IDictionary<string, string>> DeleteImage(string ip, string id);
+
+        void PullImage(string ip, string name, string tag, string guid);
+
+        List<ImagePullMsg> PullDetail(string guid);
     }
 }
