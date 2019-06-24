@@ -16,8 +16,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DockerClientPool\DockerClientPool.csproj" />
       <ProjectReference Include="..\PWEncrypt\PWEncrypt.csproj" />
       <ProjectReference Include="..\SignalRPublisher\SignalRPublisher.csproj" />
+      <ProjectReference Include="..\WSMiddleWare\WSMiddleWare.csproj" />
     </ItemGroup>
 
 </Project>

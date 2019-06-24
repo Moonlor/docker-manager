@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace DockerMgr.Middleware
+namespace WSMiddleWare
 {
     public class WebSocketConnectionManager
     {

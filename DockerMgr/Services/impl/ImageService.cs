@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Docker.DotNet.Models;
+using DockerClientPool;
 using DockerMgr.DTO.ImageDTO;
 using DockerMgr.Models;
 using Microsoft.Extensions.Configuration;

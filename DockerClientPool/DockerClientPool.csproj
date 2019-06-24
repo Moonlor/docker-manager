@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Docker.DotNet" Version="3.125.2" />
+      <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="3.0.0-preview6.19304.6" />
+    </ItemGroup>
+
+</Project>

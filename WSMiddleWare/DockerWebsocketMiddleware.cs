@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Docker.DotNet;
 using Microsoft.AspNetCore.Http;
-namespace DockerMgr.Middleware 
+namespace WSMiddleWare
 {
     public class DockerWebsocketMiddleware 
     {

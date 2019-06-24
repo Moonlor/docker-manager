@@ -1,7 +1,7 @@
 using Docker.DotNet;
 using Microsoft.Extensions.ObjectPool;
 
-namespace DockerMgr.Services
+namespace DockerClientPool
 {
     public interface IDockerClientPoolCollection
     {

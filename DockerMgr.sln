@@ -8,6 +8,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerMgrTest", "DockerMgrT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRPublisher", "SignalRPublisher\SignalRPublisher.csproj", "{CE106544-840C-487A-89C4-658B2189B2F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSMiddleWare", "WSMiddleWare\WSMiddleWare.csproj", "{ECCB4932-95FC-41BB-8F4E-5A5293C582D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerClientPool", "DockerClientPool\DockerClientPool.csproj", "{47C4B934-D2D5-4ACD-A115-5D3C3870A1B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{D17F3438-A599-4BD8-9321-59196642D44A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{349C652E-66D6-428F-B18C-2F1A2A2BF26C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{F7E64D0D-02E3-4267-A839-748402C32A75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +40,25 @@ Global
 		{CE106544-840C-487A-89C4-658B2189B2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE106544-840C-487A-89C4-658B2189B2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE106544-840C-487A-89C4-658B2189B2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECCB4932-95FC-41BB-8F4E-5A5293C582D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCB4932-95FC-41BB-8F4E-5A5293C582D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCB4932-95FC-41BB-8F4E-5A5293C582D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCB4932-95FC-41BB-8F4E-5A5293C582D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C4B934-D2D5-4ACD-A115-5D3C3870A1B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C4B934-D2D5-4ACD-A115-5D3C3870A1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C4B934-D2D5-4ACD-A115-5D3C3870A1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C4B934-D2D5-4ACD-A115-5D3C3870A1B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17F3438-A599-4BD8-9321-59196642D44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17F3438-A599-4BD8-9321-59196642D44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17F3438-A599-4BD8-9321-59196642D44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17F3438-A599-4BD8-9321-59196642D44A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349C652E-66D6-428F-B18C-2F1A2A2BF26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349C652E-66D6-428F-B18C-2F1A2A2BF26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349C652E-66D6-428F-B18C-2F1A2A2BF26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349C652E-66D6-428F-B18C-2F1A2A2BF26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7E64D0D-02E3-4267-A839-748402C32A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E64D0D-02E3-4267-A839-748402C32A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E64D0D-02E3-4267-A839-748402C32A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E64D0D-02E3-4267-A839-748402C32A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

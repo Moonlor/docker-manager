@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Docker.DotNet;
 using Microsoft.Extensions.ObjectPool;
 
-namespace DockerMgr.Services.impl
+namespace DockerClientPool
 {
     public class DockerClientPoolCollection : IDockerClientPoolCollection
     {

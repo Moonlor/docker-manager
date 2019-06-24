@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 
-namespace DockerMgr.Middleware
+namespace WSMiddleWare
 {
     public static class DockerWebSocketExtensions
     {
