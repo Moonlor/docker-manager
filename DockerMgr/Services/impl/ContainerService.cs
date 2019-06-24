@@ -61,6 +61,19 @@ namespace DockerMgr.Services.impl
                 Cmd = new string[] {"/bin/bash"},
                 Tty = true
             };
+//            var p = new CreateContainerParameters
+//            {
+//                Image = image,
+//                Cmd = new string[] {"/bin/bash"},
+//                Tty = true,
+//                HostConfig = new HostConfig
+//                {
+//                    PortBindings = new Dictionary<string, IList<PortBinding>>
+//                    {
+//                        { "5423", new List<PortBinding> { new PortBinding{HostPort = "7799"} } }
+//                    }
+//                }
+//            };
             var createdContainer = client.Containers.CreateContainerAsync(p).GetAwaiter().GetResult();
             client.Containers.StartContainerAsync(createdContainer.ID, new ContainerStartParameters()).GetAwaiter().GetResult();
         }
