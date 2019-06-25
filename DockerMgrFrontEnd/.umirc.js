@@ -25,6 +25,7 @@ export default {
   alias: {
     '@': `${__dirname}/src/`,
   },
+  history: 'hash',
   // proxy: {
   //   '/api': {
   //     target: 'http://localhost:5001',
