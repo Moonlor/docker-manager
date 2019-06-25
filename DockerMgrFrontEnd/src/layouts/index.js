@@ -63,7 +63,8 @@ class Root extends Component {
       </div>);
     }
 
-    if (token === 'null') {
+    console.log(token);
+    if (token === 'null' || ! token) {
       // this.props.history.push("/login");
       return (
         <div>
