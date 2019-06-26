@@ -1,0 +1,18 @@
+﻿// COMDLL.idl: COMDLL 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 生成类型库(COMDLL.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(b14dc082-1fe5-406f-832b-eb9f026fd948),
+	version(1.0),
+]
+library COMDLLLib
+{
+	importlib("stdole2.tlb");
+};
+

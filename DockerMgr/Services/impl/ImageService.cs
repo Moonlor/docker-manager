@@ -19,7 +19,7 @@ namespace DockerMgr.Services.impl
         {
             _pools = pools;
             _servers = servers;
-            var client = new MongoClient(config.GetConnectionString("dockerdb"));
+            var client = new MongoClient("mongodb://papa:woshinibaba@111.231.143.45:27017/dockerdb");
             var database = client.GetDatabase("dockerdb");
             _pullMsgs = database.GetCollection<ImagePullMsg>("imageMsgs");
         }

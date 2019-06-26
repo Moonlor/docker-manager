@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="COMDLLLib.dll">
+      <Guid>b14dc082-1fe5-406f-832b-eb9f026fd948</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CLRLib">
+      <HintPath>..\x64\Debug\CLRLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

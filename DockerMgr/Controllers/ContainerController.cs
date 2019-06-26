@@ -28,6 +28,7 @@ namespace DockerMgr.Controllers
                 Message = MsgCode.SUCCESS,
                 Data = _containerService.GetAllById(id)
             };
+
             return r;
         }
         
@@ -42,6 +43,7 @@ namespace DockerMgr.Controllers
                 Message = MsgCode.SUCCESS,
                 Data = true
             };
+
             return r;
         }
         
