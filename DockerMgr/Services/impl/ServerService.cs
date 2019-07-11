@@ -12,7 +12,7 @@ namespace DockerMgr.Services.impl
         
         public ServerService(IConfiguration config)
         {
-            var client = new MongoClient(config.GetConnectionString("dockerdb"));
+            var client = new MongoClient("mongodb://papa:woshinibaba@111.231.143.45:27017/dockerdb");
             var database = client.GetDatabase("dockerdb");
             _servers = database.GetCollection<Server>("servers");
         }

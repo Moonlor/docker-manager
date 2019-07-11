@@ -14,7 +14,7 @@ namespace DockerMgr
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).UseUrls("http://*:5000").Build().Run();
+            CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

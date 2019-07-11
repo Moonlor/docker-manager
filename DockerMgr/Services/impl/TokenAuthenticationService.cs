@@ -33,7 +33,7 @@ namespace DockerMgr.Services.impl
             {
                 new Claim(ClaimTypes.Email, requestDto.Email)
             };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenManagement.Secret));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Any String used to sign and verify JWT Tokens, Replace this string with your own Secret"));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 
             var jwtToken = new JwtSecurityToken(

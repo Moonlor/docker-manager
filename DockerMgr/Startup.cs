@@ -30,9 +30,7 @@ namespace DockerMgr
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
-            services.Configure<TokenManagement>(Configuration.GetSection("tokenManagement"));
-            var token = Configuration.GetSection("tokenManagement").Get<TokenManagement>();
-            var secret = Encoding.ASCII.GetBytes(token.Secret);
+            var secret = Encoding.ASCII.GetBytes("Any String used to sign and verify JWT Tokens,  Replace this string with your own Secret");
 
             services.AddAuthentication(x =>
             {

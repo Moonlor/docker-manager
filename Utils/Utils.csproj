@@ -2,6 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
+        <Platforms>AnyCPU;x86;x64</Platforms>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>DockerMgrUtils.pfx</AssemblyOriginatorKeyFile>
     </PropertyGroup>
 
     <ItemGroup>
